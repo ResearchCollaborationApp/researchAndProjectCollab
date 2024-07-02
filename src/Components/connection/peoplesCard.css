@@ -1,0 +1,27 @@
+.card {
+  width: 250px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profilePictureHolder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}

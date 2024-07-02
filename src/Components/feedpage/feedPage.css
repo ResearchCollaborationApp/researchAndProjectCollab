@@ -1,0 +1,27 @@
+.feed-page{
+    display: flex;
+    gap: 100px;
+    margin:150px 5% 0 5%;
+    margin-top: 150px;
+    
+}
+.small-profile-section{
+    width: 100%;
+    flex: 1 1 auto; 
+    width: 20%;
+    align-self: flex-start; 
+}
+.scrolling-feed-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    flex: 1 1 auto; 
+    align-self: flex-start; 
+}
+.top-research-section{
+    width: 30%;
+    flex: 1 1 auto; 
+    align-self: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,31 @@
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Center align text */
+    position: relative; /* Relative positioning */
+    bottom: 0; /* Stick to the bottom of the viewport */
+    width: 100%; /* Full width */
+  }
+  
+  .socialMed {
+    margin-bottom: 20px; /* Margin below the social media icons */
+  }
+  
+  .socialMed a {
+    margin: 0 10px; /* Spacing between social media icons */
+  }
+  
+  .socialMed a svg {
+    width: 40px; /* Size of the social media icons */
+    height: 40px;
+  }
+  
+  .text-white {
+    color: #fff; /* White text color */
+  }
+  
+  .font-weight-bold {
+    font-weight: bold; /* Bold font weight */
+  }
+  

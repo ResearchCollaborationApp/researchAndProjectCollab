@@ -1,0 +1,56 @@
+.background {
+    background-color:aliceblue;
+    height: 100%;
+    width: 100%; 
+    position:fixed;
+    top:0;
+    left:0;
+  }
+  .nku-logo {
+    width: 150px;
+    height: 80px;
+  }
+  .bi{
+    color:black;
+  }
+  .navigation-bar {
+    width: 100%;
+    z-index: 1000; 
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:80px;
+  }
+
+.me-auto{
+  display: flex;
+  gap: 40px;
+}
+.app-logo {
+  margin-right: 100px;
+  height: 85px; 
+  width: auto; 
+  max-width: 100%; 
+}
+
+.logo-img {
+  margin-right: 100px;
+  height: 100%; /* Ensure image height matches its container */
+  width: auto; /* Automatically adjust width based on height */
+  max-width: 100%; /* Ensure image doesn't exceed its container */
+  border-radius: 5%;
+}
+.nav-item-with-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.nav-label {
+  font-weight: 180;
+  font-size: 13px; /* Adjust font size as needed */
+  margin-top: 4px; /* Adjust spacing between icon and label */
+}
