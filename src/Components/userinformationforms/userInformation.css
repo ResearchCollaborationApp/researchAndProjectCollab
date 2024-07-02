@@ -9,7 +9,8 @@ body, html {
     display: flex;
     flex-direction: column;
     width: 700px;
-    height: auto;
+    height: 90vh;
+    overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     font-size: medium;
@@ -19,7 +20,7 @@ body, html {
   margin: 20px 0px 0px 30px;
   display: flex;
   flex-direction: column;
-  max-width: 400px; /* Adjust as needed */
+  max-width: 500px; /* Adjust as needed */
 }
 .form-group {
     margin-bottom: 20px;

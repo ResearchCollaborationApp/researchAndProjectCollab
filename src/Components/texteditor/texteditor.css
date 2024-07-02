@@ -1,0 +1,13 @@
+.btn{
+    margin: 10px 10px 10px 10px;
+}  .html-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden; 
+  }
+  .html-container p {
+    margin: 0; 
+    padding: 0; 
+    overflow-wrap: break-word; 
+    text-align: justify;
+}
