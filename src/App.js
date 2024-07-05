@@ -1,10 +1,11 @@
 import './App.css';
 import UserInformation from './Components/userinformationforms/userInformation.js'
-import ResearchForm from './Components/userinformationforms/researchForm.js'
+import Skills from './Components/skillsandinterests/skills.js'
+
 function App() {
   return (
     <>
-      <ResearchForm/>
+      <Skills/>
     </>
   )
 

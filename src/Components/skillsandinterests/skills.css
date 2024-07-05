@@ -1,0 +1,23 @@
+.skills-options {
+    margin-top: 50px;;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: flex-start; 
+}
+
+.skill-button {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    border: none;
+    color:white;
+    font-size: 18px;
+    font-weight:800;
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: transform 0.5s;
+   
+}
+.skill-button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}

@@ -38,9 +38,9 @@
 
 .logo-img {
   margin-right: 100px;
-  height: 100%; /* Ensure image height matches its container */
-  width: auto; /* Automatically adjust width based on height */
-  max-width: 100%; /* Ensure image doesn't exceed its container */
+  height: 100%; 
+  width: auto;
+  max-width: 100%; 
   border-radius: 5%;
 }
 .nav-item-with-label {
