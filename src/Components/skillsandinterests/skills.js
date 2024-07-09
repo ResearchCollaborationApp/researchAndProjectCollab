@@ -48,24 +48,82 @@ const handleSkillButton = (id) => {
       console.log(`Skill Name: ${updatedSkills[skillIndex].skill}, isSelected: ${updatedSkills[skillIndex].isSelected}`);
   }
 };
+    // State to hold the current input and the list of interests
+    const [interest, setInterest] = useState('');
+    const [interests, setInterests] = useState([]);
+  
+    // Function to handle input change
+    const handleInputChange = (e) => {
+      setInterest(e.target.value);
+    };
+  
+    // Function to add interest to the list
+    const addInterest = () => {
+      if (interest.trim() !== '') {
+        setInterests([...interests, interest]);
+        setInterest(''); // Clear the input field
+      }
+    };
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        addInterest();
+      }
+    };
+  
+    // Function to remove an interest from the list
+    const removeInterest = (index) => {
+      setInterests(interests.filter((_, i) => i !== index));
+    };
   return (
     <div>
         <div className="information-forms-container">
-        <h1>Skills</h1>
-        <h6>Please select the skills you have</h6>
-        <div className = "skills-options">
-        {skillNames.map((skill) => (
-                <button
-                    className="skill-button"
-                    key={skill.id}
-                    onClick={() => handleSkillButton(skill.id)}
-                    style={{ backgroundColor: skill.isSelected ? 'blue' : 'black' }}
-                >
-                    {skill.skill}
-                </button>
-            ))}
+          <div>
+            <h1>Skills</h1>
+            <h6>Please select the skills you have</h6>
+            <div className = "skills-options">
+            {skillNames.map((skill) => (
+                    <button
+                        className="skill-button"
+                        key={skill.id}
+                        onClick={() => handleSkillButton(skill.id)}
+                        style={{ backgroundColor: skill.isSelected ? '#0056b3' : 'black' }}
+                    >
+                        {skill.skill}
+                    </button>
+                ))}
+            </div>
+         </div>
+         <div>
+          <h1>Interests</h1>
+          <h6>Type in your interests</h6>
+          <div className = "enter-interest">
+            <input
+            type="text"
+            value={interest}
+            onChange={handleInputChange}
+            placeholder="Enter your interest"
+            onKeyDown={handleKeyPress}
+            />
+          <button onClick={addInterest}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+            </svg>
+          </button>
+         </div>
+         <div className="skills-options">
+          {interests.map((item, index) => (
+            <div key={index} className="interest-item">
+              <button className='skill-button' style={{backgroundColor:'#0056b3'}}>{item}</button>
+              <button onClick={() => removeInterest(index)} className='remove-button'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg>
+              </button>
+            </div>
+          ))}
         </div>
-        </div>
+       </div>
+      </div>
     </div>
   )
 }

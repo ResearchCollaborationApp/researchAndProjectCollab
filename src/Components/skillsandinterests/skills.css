@@ -1,5 +1,6 @@
 .skills-options {
-    margin-top: 50px;;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap; 
     gap: 16px; 
@@ -19,5 +20,40 @@
    
 }
 .skill-button:hover {
-    transform: scale(1.05); /* Slightly enlarges the button on hover */
+    transform: scale(1.05); 
 }
+.enter-interest{
+    display: flex;
+    align-items: center;
+}
+.enter-interest input{
+    width: 50%;
+    border-radius:2px;
+}
+.enter-interest button {
+    align-items: center;
+    border-radius: 3px;
+    margin-left:10px;
+    background-color: #0056b3; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  
+  .add-button:hover {
+    transition: transform 0.5s;
+    
+  }
+  .remove-button {
+    background-color: red;
+    color: white;
+    margin-left:3px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .remove-button:hover {
+    background-color: darkred; /* Darker red on hover */
+  }
