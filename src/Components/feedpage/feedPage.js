@@ -10,14 +10,14 @@ export default function FeedPage() {
   return (
     <>
       <Navigation/>
-      <div className = "feed-page">
-        <div className = "small-profile-section">
+      <div className = " container feed-page">
+        <div className = "small-profile-section col">
           <Mainprofile/>
         </div>
-        <div className = "scrolling-feed-section">
+        <div className = "scrolling-feed-section col">
          <ScrollingFeed/>
         </div>
-        <div className = "top-research-section">
+        <div className = "top-research-section col me-5">
           <Card>
           <Card.Header><b>Top Research Around School</b></Card.Header>
             <Card.Body>

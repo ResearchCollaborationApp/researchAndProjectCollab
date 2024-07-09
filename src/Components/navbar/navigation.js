@@ -6,10 +6,10 @@ export default function Navigation() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div className="container-fluid column-gap-4">
-          <a className="navbar-brand app-logo" href="#">
+          <a className="navbar-brand app-logo ms-3" href="#">
           <img src = {app_logo} alt="App Logo" />
           </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptionsLabel" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptionsLabel" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
@@ -19,7 +19,17 @@ export default function Navigation() {
           </div>
           <div className="offcanvas-body">
           <ul className="navbar-nav me-auto column-gap-5">
-              <li className="nav-item">
+             <li>
+              <form className="d-flex" role="search">
+                <input 
+                className="form-control me-4 mt-3" 
+                type="search" 
+                placeholder="Search" 
+                aria-label="Search"
+                />
+              </form>
+            </li>
+              <li className="nav-item ">
                 <a className="nav-link active" aria-current="page" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-house-fill" viewBox="0 0 16 16">
                     <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
