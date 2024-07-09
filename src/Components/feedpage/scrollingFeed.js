@@ -1,6 +1,6 @@
 import React from 'react'
-import '../profile.css'
-import '../scrollingFeed.css'
+import './profile.css'
+import './scrollingFeed.css'
 export default function ScrollingFeed() {
   return (
     <>

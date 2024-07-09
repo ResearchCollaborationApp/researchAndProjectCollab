@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './skills.css'
 
 export default function Skills() {
+  //this data will be generated according to the major
   const [skillNames, setSkillNames] = useState([
     { id: 1, skill: "Python", isSelected: false },
     { id: 2, skill: "Java", isSelected: false },
@@ -105,17 +106,17 @@ const handleSkillButton = (id) => {
             onKeyDown={handleKeyPress}
             />
           <button onClick={addInterest}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
             </svg>
           </button>
          </div>
          <div className="skills-options">
           {interests.map((item, index) => (
-            <div key={index} className="interest-item">
+            <div key={index} className="interest-items">
               <button className='skill-button' style={{backgroundColor:'#0056b3'}}>{item}</button>
               <button onClick={() => removeInterest(index)} className='remove-button'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 20 20">
                 <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
               </svg>
               </button>

@@ -1,10 +1,10 @@
 import React from 'react'
-import Navigation from './navigation'
-import '../feedPage.css'
+import Navigation from '../navbar/navigation'
+import './feedPage.css'
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
-import Mainprofile from './mainprofile';
+import Mainprofile from '../profilepage/mainprofile';
 import ScrollingFeed from './scrollingFeed';
 export default function FeedPage() {
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
 import Mainprofile from './mainprofile';
-import Navigation from '../navigation';
+import Navigation from '../navbar/navigation';
 import Sections from './sections';
-import Footer from './footer';
-import FriendsAndMore from './friends_and_more';
+import Footer from '../footer/footer';
+import FriendsAndMore from '../feedpage/friends_and_more';
+import './profile.css'
 export default function Profile() {
   return (
     <>

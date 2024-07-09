@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
-import '../profile.css';
+import './profile.css';
 export default function Mainprofile() {
   //add contact info, edit icons in the profile card
   return (
@@ -15,7 +15,7 @@ export default function Mainprofile() {
       </div>
       <div className = "user-info">
           <div className = "name-and-address">
-              <ul>
+              <ul style={{listStyleType: 'none'}}>
                 <li>
                   <b>Bhuwan Bhandari</b>
                 </li>
