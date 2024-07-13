@@ -4,7 +4,6 @@ import './scrollingFeed.css'
 export default function ScrollingFeed() {
   return (
     <>
-    {/*This is the create-post-section component*/}
     <div className = 'create-post-section'>
         <div className = "create-post">
             <div>

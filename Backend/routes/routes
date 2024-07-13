@@ -1,0 +1,13 @@
+const express = require('express')
+const router = express.Router()
+
+router.get('/',(req,res)=>{
+    res.json({msg:'This is the home page for getResearch app.'})
+})
+
+router.post('/email',(req,res)=>{
+    res.json({msg:'Your email has been posted successfully.'})
+})
+
+
+module.exports = router
