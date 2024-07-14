@@ -4,12 +4,12 @@ import Skills from './Components/skillsandinterests/skills.js'
 import Profile from './Components/profilepage/profile.js';
 import Navigation from './Components/navbar/navigation.js';
 import FeedPage from './Components/feedpage/feedPage.js';
-import ResearchForm from './Components/userinformationforms/researchForm.js'; 
+import DevicesTestApi from './Components/devicesTestApi/devicesTestApi.jsx';
 function App() {
   return (
     <>
-    
-      <ResearchForm/>
+
+      <DevicesTestApi/>
     </>
   )
 

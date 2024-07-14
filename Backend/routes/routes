@@ -1,13 +1,27 @@
 const express = require('express')
 const router = express.Router()
+const {
+   getAllDevices ,
+    getDevice,
+    createDevice,
+    deleteDevice,
+    updateDevice
+} = require('../controllers/deviceController')
 
-router.get('/',(req,res)=>{
-    res.json({msg:'This is the home page for getResearch app.'})
-})
 
-router.post('/email',(req,res)=>{
-    res.json({msg:'Your email has been posted successfully.'})
-})
+//GET a device
+router.get('/', getAllDevices)
 
+//GET a single device
+router.get('/:id',getDevice)
+
+//POST a new device
+router.post('/', createDevice)
+
+//DELETE a device
+router.delete('/:id',deleteDevice)
+
+//UPDATE a device
+router.patch('/:id',updateDevice)
 
 module.exports = router

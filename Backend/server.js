@@ -12,12 +12,14 @@ app.use((req,res,next)=>{
     next()
 })
 
-app.use('/getResearch',allroutes) 
+//use all the routes created in routes
+app.use('/api/getResearch',allroutes) 
 
 //connect to database
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
-    //listen for requests
+//listen for requests after connection
+
 app.listen(process.env.PORT,()=>{
     console.log('connected to database and listening on port 4000')
 })
