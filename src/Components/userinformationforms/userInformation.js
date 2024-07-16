@@ -12,7 +12,7 @@ const UserInformation = () => {
     setFormData(pageInformation[pageNum].formData);
   }, [pageNum]);
 
-  const handleFormData = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
   };
@@ -44,7 +44,7 @@ const UserInformation = () => {
                 type={asset.type}
                 name={asset.fieldName.toLowerCase().replace(/\s+/g, '')}
                 value={formData[asset.fieldName.toLowerCase().replace(/\s+/g, '')] || ''}
-                onChange={handleFormData}
+                onChange={handleChange}
                 className="form-input"
               />
           </div>

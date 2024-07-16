@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-size: 15px;
+  color: #444444;
+  line-height: 17px;
+  padding: 50px 30px;
+  font-family: sans-serif;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}

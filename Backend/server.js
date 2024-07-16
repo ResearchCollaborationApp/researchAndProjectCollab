@@ -19,7 +19,6 @@ app.use('/api/getResearch',allroutes)
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
 //listen for requests after connection
-
 app.listen(process.env.PORT,()=>{
     console.log('connected to database and listening on port 4000')
 })
