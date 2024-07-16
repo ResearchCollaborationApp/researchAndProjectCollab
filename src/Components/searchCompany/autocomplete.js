@@ -11,27 +11,31 @@ import {
   SLabelPrefix,
   SLabelSuffix,
   SNotFound,
-  SInput
+  SInput,
+  SIconAndTextWrapper, 
+  SIcon, 
+  SText
 } from "./autocomplete.style";
 import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Autocomplete = ({ onSubmit, placeholder }) => {
-  const [value, setValue] = useState({ text: "", active: false });
+  const [value, setValue] = useState({ text: "", icon: "", active: false });
   const [queries, setQueries] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const text = queries?.[0]?.domain || value.text;
+    const text = queries?.[0]?.name || value.text;
+    const icon = queries?.[0]?.icon || value.icon;
     onSubmit({ value: text, query: undefined, queries });
-    setValue({ text, active: false });
+    setValue({ text, icon, active: false });
     setQueries([]);
   };
 
   const handleClick = (query) => {
     onSubmit({ value: value.text, query, queries });
-    setValue({ text: query.icon, active: false });
+    setValue({ text: query.name, icon: query.icon, active: false });
   };
 
   const reset = () => {
@@ -76,6 +80,12 @@ export const Autocomplete = ({ onSubmit, placeholder }) => {
             setValue({ text: e.target.value, active: true })
           }
         />
+          {value.icon && ( // Conditional rendering of icon and text
+          <SIconAndTextWrapper>
+            <SIcon src={value.icon} alt="icon" />
+            <SText>{value.text}</SText>
+          </SIconAndTextWrapper>
+        )}
 
         {value.text !== "" && (
           <SLabelSuffix onClick={() => reset()}>

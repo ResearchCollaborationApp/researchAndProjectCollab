@@ -132,4 +132,22 @@ export const SNotFoundIcon = styled.div`
   margin-bottom: ${space[20]};
   color: ${color.black500};
 `;
+export const SIconAndTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+`;
 
+export const SIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+`;
+
+export const SText = styled.span`
+  font-size: 1rem;
+`;
+export const SInputWrapper = styled.div`
+  position: relative;
+`;

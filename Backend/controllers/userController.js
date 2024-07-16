@@ -23,27 +23,26 @@ const getUser = async(req,res)=>{
 
 //create a user
 const createUser = async(req,res)=>{
-    const {firstName,
-    lastName,
-    dateOfBirth,
-    address,
-    schoolEmail,
+    console.log(req.body)
+    const {address,
+    confirmpassword,
+    dateofbirth,
+    firstname,
+    lastname,
     password,
-    confirmPassword,
-    username,
-    studentId} = req.body;
+    schoolemail,
+    username} = req.body;
     try{
         const user = await User.create(
         {
-            firstName,
-            lastName,
-            dateOfBirth,
             address,
-            schoolEmail,
+            confirmpassword,
+            dateofbirth,
+            firstname,
+            lastname,
             password,
-            confirmPassword,
-            username,
-            studentId
+            schoolemail,
+            username
         })
         res.status(200).json(user)
     }

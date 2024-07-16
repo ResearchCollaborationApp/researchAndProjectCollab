@@ -3,23 +3,23 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const usersSchema = new Schema({
-    firstName:{
-        type:String,
-        required: true
-    },
-    lastName:{
-        type:String,
-        required: true
-    },
-    dateOfBirth:{
-        type:String,
-        required: true
-    },
     address:{
         type:String,
         required: true
     },
-    schoolEmail:{
+    confirmpassword:{
+        type:String,
+        required: true
+    },
+    dateofbirth:{
+        type:Date,
+        required: true
+    },
+    firstname:{
+        type:String,
+        required: true
+    },
+    lastname:{
         type:String,
         required: true
     },
@@ -27,15 +27,11 @@ const usersSchema = new Schema({
         type:String,
         required: true
     },
-    confirmPassword:{
+   schoolemail:{
         type:String,
         required: true
     },
     username:{
-        type:String,
-        required: true
-    },
-    studentId:{
         type:String,
         required: true
     }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Switch from 'react-switch';
-import '../userInformation.css';
-import RichTextEditor from '../textEditor';
+import './userInformation.css';
+import RichTextEditor from '../texteditor/textEditor';
+import SearchCompany from '../searchCompany/searchCompany';
 export default function ResearchForm() {
     const [checked, setChecked] = useState(false);
 
@@ -31,7 +32,7 @@ export default function ResearchForm() {
           <label className ="form-label">Name of Research</label>
           <input type="text" className="form-input" name="research-name" placeholder=""></input>
           <label className ="form-label">Institution</label>
-          <input type="text" className="form-input" name="institution-name" placeholder=""></input>
+          <SearchCompany />
           <label className ="form-label">Department</label>
           <input type="text" className="form-input" name="department-name" placeholder=""></input>
           <div className='form-group'>
