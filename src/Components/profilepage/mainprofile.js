@@ -1,48 +1,31 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
-import './profile.css';
 export default function Mainprofile() {
   //add contact info, edit icons in the profile card
   return (
-    <div className = "profile-card">
-      <div className = "cover-photo">
-        <img src = "https://media.sproutsocial.com/uploads/1c_facebook-cover-photo_clean@2x.png" alt = 'coverphoto'/>
-        <div className = "profile-photo-card">
-          <img src = "https://img.freepik.com/free-photo/closeup-shot-beautiful-bald-eagle-with-blurred-background_181624-2767.jpg?t=st=1719243095~exp=1719246695~hmac=18a2f4ff487b812cb376855ef7e327e87316ea78265ab9cbbdf88a81a0e003d3&w=900" alt ='profilephoto'/>
-      </div>
-      </div>
-      <div className = "user-info">
-          <div className = "name-and-address">
-              <ul style={{listStyleType: 'none'}}>
-                <li>
-                  <b>Bhuwan Bhandari</b>
-                </li>
-                <li>
-                  <i>Junior Computer Science</i>
-                </li>
-                <li>
-                 Cold Spring, KY
-                </li>
-                <li style = {{color:'blue', fontWeight: 'bold'}}>
-                 Contact
-                </li>
-              </ul>
+        <div className="container mx-auto p-4 border-2 rounded-lg border-gray-100 bg-white">
+          <div className="relative">
+            <img
+              src="https://media.sproutsocial.com/uploads/1c_facebook-cover-photo_clean@2x.png"
+              alt="coverphoto"
+              className="h-full w-full rounded-t-lg object-cover sm:h-80 lg:h-96"
+            />
+            <div className="absolute inset-x-0 top-48 sm:top-56 lg:top-64 flex justify-center">
+              <img
+                src="https://img.freepik.com/free-photo/closeup-shot-beautiful-bald-eagle-with-blurred-background_181624-2767.jpg?t=st=1719243095~exp=1719246695~hmac=18a2f4ff487b812cb376855ef7e327e87316ea78265ab9cbbdf88a81a0e003d3&w=900"
+                alt="profilephoto"
+                className="w-24 h-24 rounded-full border-2 border-gray-300 sm:w-32 sm:h-32 lg:w-40 lg:h-40"
+              />
+            </div>
           </div>
-      </div>
-      <div className = "few-more-buttons">
-              <button className='extra-buttons'>More</button>
-              <button className='extra-buttons'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-              </svg>
-               Edit
-              </button>
-      </div>
-    </div>
+          <div className="flex flex-col items-center mt-10">
+            <ul className="text-center space-y-2">
+              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Bhuwan Bhandari</li>
+              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Junior Computer Science</li>
+              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Cold Spring, KY</li>
+              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">More</li>
+            </ul>
+          </div>
+        </div>
 
-    
   )
 }

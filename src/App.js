@@ -1,9 +1,10 @@
 import './App.css';
-import UserInformation from './Components/userInformationForms/userInformation';
+import Profile from './Components/profilepage/profile';
+import FriendsAndMore from './Components/feedpage/friends_and_more';
 function App() {
   return (
     <>
-      <UserInformation/>
+      <Profile/>
     </>
   )
 
