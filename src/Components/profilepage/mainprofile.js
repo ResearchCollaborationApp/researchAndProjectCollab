@@ -2,7 +2,7 @@ import React from 'react'
 export default function Mainprofile() {
   //add contact info, edit icons in the profile card
   return (
-        <div className="container mx-auto p-4 border-2 rounded-lg border-gray-100 bg-white">
+        <div className="w-full rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
           <div className="relative">
             <img
               src="https://media.sproutsocial.com/uploads/1c_facebook-cover-photo_clean@2x.png"

@@ -1,7 +1,6 @@
 import React from 'react'
 import Navigation from '../navbar/navigation'
 import './feedPage.css'
-import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import Mainprofile from '../profilepage/mainprofile';

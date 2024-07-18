@@ -1,10 +1,12 @@
 import './App.css';
+import Navigation from './Components/navbar/navigation';
 import Profile from './Components/profilepage/profile';
-import FriendsAndMore from './Components/feedpage/friends_and_more';
+import LoginPage from './Components/authpages/LoginPage';
+import Animation from './Components/animation/animation';
 function App() {
   return (
     <>
-      <Profile/>
+      <LoginPage/>
     </>
   )
 

@@ -68,7 +68,7 @@ export default function FriendsAndMore() {
           <div>
             <h3 className="text-xl font-medium text-gray-800">Claire Mac</h3>
             <div className="flow-root">
-              <ul className="-m-1 flex flex-wrap">
+              <ul className="m-1 flex flex-wrap">
                 <li className="p-1 leading-none">
                   <a href="#" className="text-xm font-medium text-gray-500">Computer Science </a>
                 </li>
