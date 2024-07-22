@@ -10,7 +10,6 @@ export default function SignUpPage(){
                 <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                     <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up </h2>
                     <p className="mt-2 text-base text-gray-600">Already have an account? <a href="#" title="" className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700">Log in</a></p>
-    
                     <form action="#" method="POST" className="mt-8">
                         <div className="space-y-5">
                             <div>

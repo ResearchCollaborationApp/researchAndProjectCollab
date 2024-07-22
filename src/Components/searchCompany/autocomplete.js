@@ -72,7 +72,6 @@ export const Autocomplete = ({ onSubmit, placeholder }) => {
         <SLabelPrefix>
           <FontAwesomeIcon size="sm" icon={faMagnifyingGlass} />
         </SLabelPrefix>
-
         <SInput
           placeholder={placeholder}
           value={value.text}
@@ -80,13 +79,6 @@ export const Autocomplete = ({ onSubmit, placeholder }) => {
             setValue({ text: e.target.value, active: true })
           }
         />
-          {value.icon && ( // Conditional rendering of icon and text
-          <SIconAndTextWrapper>
-            <SIcon src={value.icon} alt="icon" />
-            <SText>{value.text}</SText>
-          </SIconAndTextWrapper>
-        )}
-
         {value.text !== "" && (
           <SLabelSuffix onClick={() => reset()}>
             <FontAwesomeIcon size="sm" icon={faTimes} />

@@ -1,4 +1,4 @@
-import "./searchCompany.css";
+
 import { Autocomplete } from "./autocomplete";
 
 export default function SearchCompany() {
@@ -11,7 +11,7 @@ export default function SearchCompany() {
     <div>
       <Autocomplete
         onSubmit={handleSubmit}
-        placeholder="Enter a company name"
+        placeholder="Enter organization name"
       />
     </div>
   );

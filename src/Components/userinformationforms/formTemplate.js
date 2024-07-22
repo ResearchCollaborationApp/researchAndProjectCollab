@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-export default function FormTemplate({ array }) {
+import React, { useState, useEffect } from 'react';
+import InputField from './inputField';
+export default function FormTemplate({ userInfo, handleNext }) {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -10,53 +10,55 @@ export default function FormTemplate({ array }) {
       [name]: value
     });
   };
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted:', formData);
-    const response = await fetch('api/getResearch', {
-      method: 'POST',
-      body:JSON.stringify(formData),
-      headers:{
-        'Content-Type':'application/json'
-      }
-    })
-    const json = await response.json()
-    if(!response.ok){
-      setError(json.error)
-    }
-    if(response.ok){
-      setError(null)
-      setFormData({})
-      console.log("New user added")
-    }
-  };
-
+    handleNext();
+  }
   return (
-    <div className='information-forms-container'>
-      <form onSubmit={handleSubmit}>
-        {array.map((section, sectionIndex) => (
-          <div key={sectionIndex} className='form-section'>
-            <h1>{section.title}</h1>
-            {section.inputFields.map((field, fieldIndex) => (
-              <div key={fieldIndex}>
-                <label className="form-label">
-                  {field.field}:
-                  <input
-                    type={field.type}
-                    name={field.field.toLowerCase().replace(/ /g, '')}
-                    value={formData[field.field.toLowerCase().replace(/ /g, '')] || ''}
-                    onChange={handleChange}
-                    className='form-input'
-                  />
-                </label>
-              </div>
-            ))}
+      <section className="container mx-auto max-w-xl">
+        <div className="items-center justify-center px-4 py-10 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+          <div className="xl:w-full xl:max-w- 2xl:max-w-md xl:mx-auto">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
+              {userInfo.title}
+            </h2>
+            <p className="mt-2 text-base text-gray-600">{userInfo.saySomething}</p>
+            <form action="#" className="mt-8" onSubmit={handleSubmit}>
+               <div className="space-y-5">
+                  {userInfo.inputFields.map((inputField, fieldIndex) => (
+                    <div key={fieldIndex}>
+                      <label
+                        htmlFor={inputField.name}
+                        className="text-base font-medium text-gray-900"
+                      >
+                        {inputField.field}
+                      </label>
+                        <div className="mt-2.5">
+                          <InputField inputField={inputField} handleChange={handleChange} />
+                        </div>
+                      </div>
+                      ))}
+                      <div>
+                        <button
+                          type="submit"
+                          className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
+                        >
+                          Continue
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-5"
+                          >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                </form>
+            </div>
           </div>
-        ))}
-        <button type="submit" className='btn btn-primary'>Save</button>
-      </form>
-      {error&& <div>{error}</div>}
-    </div>
-  );
-}
+      </section>
+)};

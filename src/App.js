@@ -1,13 +1,11 @@
 import './App.css';
-import Navigation from './Components/navbar/navigation';
-import Profile from './Components/profilepage/profile';
-import LoginPage from './Components/authpages/LoginPage';
-import Animation from './Components/animation/animation';
-import SignUpPage from './Components/authpages/SignupPage';
+import SearchCompany from './Components/searchCompany/searchCompany'
+import UserInformation from './Components/userInformationForms/userInformation';
 function App() {
   return (
     <>
-      <SignUpPage/>
+  <UserInformation/>
+
     </>
   )
 

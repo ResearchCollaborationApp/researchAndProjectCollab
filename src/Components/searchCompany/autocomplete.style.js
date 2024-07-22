@@ -41,13 +41,13 @@ export const SLabelSuffix = styled.label`
 `;
 
 export const SInput = styled.input`
-  background-color: ${color.white300};
+  background-color: ${color.white198};
   border-radius: ${radius.md};
   font-size: ${fontSize.md};
   line-height: ${space[35]};
-  padding: 0 ${space[35]};
+  padding: 0 ${space[45]};
   box-sizing: border-box;
-  height: ${space[35]};
+  height: ${space[45]};
   box-shadow: none;
   width: 100%;
   outline: 0;
@@ -55,7 +55,7 @@ export const SInput = styled.input`
 
   &:hover,
   &:focus {
-    box-shadow: inset 0px 0px 0px 2px ${color.white500};
+    box-shadow: inset 0px 0px 0px 1px ${color.blue500};
   }
 `;
 
