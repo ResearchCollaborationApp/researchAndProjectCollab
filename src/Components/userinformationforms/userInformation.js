@@ -14,7 +14,7 @@ const UserInformation = () => {
       { field: "First Name", type: "text", name:"firstName"},
       { field: "Last Name", type: "text", name:"lastName" },
       { field: "Date of Birth", type: "date" , name:"dateOfBirth"},
-      { field: "Address", type: "text" , name:"address"}
+      { field: "Address", type: "address" , name:"address"}
     ]
   },
   {

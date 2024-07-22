@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchCompany from '../searchCompany/searchCompany';
+import AddressAutocomplete from './addressAutocomplete';
 export default function InputField({inputField, handleChange}) {
  if (inputField.type ==='textarea'){
     return (
@@ -29,6 +30,13 @@ export default function InputField({inputField, handleChange}) {
     return (
       <div >
         <SearchCompany/>
+      </div>
+    );
+  }
+  if (inputField.type === 'address') {
+    return (
+      <div >
+        <AddressAutocomplete/>
       </div>
     );
   }
