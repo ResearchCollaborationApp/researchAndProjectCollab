@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './skills.css'
+import { AddIcon, CancelIcon, NextIcon } from '../Icons';
 
 export default function Skills() {
   //this data will be generated according to the major
@@ -71,16 +72,19 @@ const handleSkillButton = (id) => {
       }
     };
   
+
+
+  
     // Function to remove an interest from the list
     const removeInterest = (index) => {
       setInterests(interests.filter((_, i) => i !== index));
     };
   return (
-    <div>
-        <div className="information-forms-container">
+      <div className="container mx-auto max-w-xl" >
+        <div className="items-center justify-center px-4 py-10 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
           <div>
-            <h1>Skills</h1>
-            <h6>Please select the skills you have</h6>
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Skills</h2>
+            <p className="mt-2 text-base text-gray-600">Please select the skills you have</p>
             <div className = "skills-options">
             {skillNames.map((skill) => (
                     <button
@@ -95,35 +99,41 @@ const handleSkillButton = (id) => {
             </div>
          </div>
          <div>
-          <h1>Interests</h1>
-          <h6>Type in your interests</h6>
-          <div className = "enter-interest">
+          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Interests</h2>
+          <p className="mt-2 text-base text-gray-600 mb-2">Type in your interests</p>
+          <div className="relative w-full ">
             <input
-            type="text"
-            value={interest}
-            onChange={handleInputChange}
-            placeholder="Enter your interest"
-            onKeyDown={handleKeyPress}
+              type="text"
+              value={interest}
+              onChange={handleInputChange}
+              placeholder="Enter your interest"
+              className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+              onKeyDown={handleKeyPress}
             />
-          <button onClick={addInterest}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
-            </svg>
-          </button>
-         </div>
+            <button 
+              className="absolute inset-y-0 right-0 flex items-center pr-3"
+              onClick={addInterest}
+            >
+              <AddIcon/>
+            </button>
+          </div>
          <div className="skills-options">
           {interests.map((item, index) => (
             <div key={index} className="interest-items">
               <button className='skill-button' style={{backgroundColor:'#0056b3'}}>{item}</button>
-              <button onClick={() => removeInterest(index)} className='remove-button'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 20 20">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-              </svg>
+                <button onClick={() => removeInterest(index)} className="text-black border-none rounded cursor-pointer">
+                <CancelIcon/>
               </button>
             </div>
           ))}
         </div>
        </div>
+       <button
+        className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
+        >
+        Save and continue
+        <NextIcon/>
+      </button>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 
-import { Autocomplete } from "./autocomplete";
+import { CompanyAutocomplete } from "./autocomplete";
 
-export default function SearchCompany() {
+export default function SearchCompany({}) {
   const handleSubmit = ({ value, query, queries }) => {
     // Query has been clicked if query in undefined.
     console.log(value, query, queries);
@@ -9,7 +9,7 @@ export default function SearchCompany() {
 
   return (
     <div>
-      <Autocomplete
+      <CompanyAutocomplete
         onSubmit={handleSubmit}
         placeholder="Enter organization name"
       />

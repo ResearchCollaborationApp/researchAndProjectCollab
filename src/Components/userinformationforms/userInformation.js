@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import FormTemplate from './formTemplate';
+import Skills from '../skillsandinterests/skills';
 const UserInformation = () => {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
     setIndex((prevIndex) => (prevIndex + 1));
+
   };
   const user = [
     {
@@ -15,7 +17,8 @@ const UserInformation = () => {
       { field: "Last Name", type: "text", name:"lastName" },
       { field: "Date of Birth", type: "date" , name:"dateOfBirth"},
       { field: "Address", type: "address" , name:"address"}
-    ]
+    ],
+    addMore: false
   },
   {
     title: "Education",
@@ -25,7 +28,8 @@ const UserInformation = () => {
       { field: "Year in school", type: "text", name:"yearInSchool" },
       { field: "Graduation date", type: "date" , name:"graduationDate"},
       { field: "Department associated with", type: "text" , name:"department"}
-    ]
+    ],
+    addMore: false
   },
   {
     title: "Research",
@@ -34,16 +38,21 @@ const UserInformation = () => {
       { field: "Name of research", type: "text", name:"researchName" },
       { field: "Organization associated with", type: "select", name:"organization" },
       { field: "From", type: "date" , name:"researchStartDate"},
+      { field: "Is this your present research?", type: "checkbox", name:"isPresent"},
       { field: "To", type: "date" , name:"researchEndDate"},
-      { field: "Description", type: "textarea" , name:"description"},
-      { field: "Is this your present research?", type: "switch", name:"isPresent"}
-    ]
+      { field: "Description", type: "textarea" , name:"description"}
+    ],
+    addMore: true
   }
 ]
   return (
-      <FormTemplate
-        userInfo= {user[index]} handleNext={handleNext}
-      />
+    <>
+    {index < user.length ? (
+      <FormTemplate userInfo={user[index]} handleNext={handleNext} />
+    ) : (
+      <Skills />
+    )}
+  </>
 
   )
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 
-const AddressAutocomplete = () => {
+const AddressAutocomplete = ({onAddressChange}) => {
   const [address, setAddress] = useState('');
   const searchBoxRef = useRef(null);
 
@@ -12,7 +12,7 @@ const AddressAutocomplete = () => {
     const place = places[0];
     const formattedAddress = place.formatted_address;
     setAddress(formattedAddress);
-    
+    onAddressChange(formattedAddress);
   };
 
   return (

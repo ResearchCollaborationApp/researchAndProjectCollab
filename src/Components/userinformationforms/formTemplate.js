@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import InputField from './inputField';
+import { AddIcon, NextIcon } from '../Icons';
 export default function FormTemplate({ userInfo, handleNext }) {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
@@ -10,10 +11,16 @@ export default function FormTemplate({ userInfo, handleNext }) {
       [name]: value
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted:', formData);
     handleNext();
+  }
+  const handleAddMore = (event)=>{
+    event.preventDefault();
+    setFormData({})
+    console.log('Form submitted:', formData);
   }
   return (
       <section className="container mx-auto max-w-xl">
@@ -34,26 +41,32 @@ export default function FormTemplate({ userInfo, handleNext }) {
                         {inputField.field}
                       </label>
                         <div className="mt-2.5">
-                          <InputField inputField={inputField} handleChange={handleChange} />
+                          <InputField 
+                          inputField={inputField} 
+                          handleChange={handleChange}
+                          value={formData[inputField.name] || ''}/>
                         </div>
                       </div>
                       ))}
+                      {
+                      userInfo.addMore && 
+                       <div>
+                       <button
+                         onClick = {handleAddMore}
+                         className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
+                       >
+                         Save and add more
+                        <AddIcon/>
+                       </button>
+                     </div>
+                     }
                       <div>
                         <button
                           type="submit"
                           className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700"
                         >
-                          Continue
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="size-5"
-                          >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                          </svg>
+                          Save and continue
+                         <NextIcon/>
                         </button>
                       </div>
                     </div>

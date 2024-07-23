@@ -19,23 +19,24 @@ import {
 import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const Autocomplete = ({ onSubmit, placeholder }) => {
+export const CompanyAutocomplete = ({ onSubmitSearch, placeholder }) => {
   const [value, setValue] = useState({ text: "", icon: "", active: false });
   const [queries, setQueries] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const text = queries?.[0]?.name || value.text;
     const icon = queries?.[0]?.icon || value.icon;
-    onSubmit({ value: text, query: undefined, queries });
+    onSubmitSearch({ value: text, query: undefined, queries });
     setValue({ text, icon, active: false });
     setQueries([]);
   };
 
   const handleClick = (query) => {
-    onSubmit({ value: value.text, query, queries });
-    setValue({ text: query.name, icon: query.icon, active: false });
+    const newValue = { text: query.name, icon: query.icon, active: false };
+    setValue(newValue);
+    onSubmitSearch({ value: newValue.text, query, queries });
+    console.log("Selected value:", newValue.text);
   };
 
   const reset = () => {
@@ -46,8 +47,7 @@ export const Autocomplete = ({ onSubmit, placeholder }) => {
   const getQueries = useCallback(async (searchValue) => {
     if (searchValue !== "") {
       try {
-        const url = `https://api.brandfetch.io/v2/search/${searchValue}`;
-
+        const url = `https://api.brandfetch.io/v2/search/${searchValue}`
         const res = await fetch(url);
         if (res.ok) {
           const data = await res.json();
