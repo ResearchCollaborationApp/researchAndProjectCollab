@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       {sections.map((section, index) => (
-        <section key={index}>
+        <section key={index} className="relative">
           <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
               <div className={`relative h-64 overflow-hidden rounded-lg sm:h-80 lg:h-full ${index % 2 === 1 ? '' : 'lg:order-last'}`}>
@@ -44,18 +44,33 @@ export default function Home() {
                   {section.description}
                 </p>
                 <Link
-                to="/signup"
-                className="mt-8 inline-block rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white transition transform duration-500 ease-in-out hover:scale-110"
-              >
-                {section.linkText}
-              </Link>
+                  to="/signup"
+                  className="mt-8 inline-block rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white transition transform duration-500 ease-in-out hover:scale-110"
+                >
+                  {section.linkText}
+                </Link>
               </div>
             </div>
           </div>
+          {/* SVG line connecting to the next section */}
+          {index < sections.length - 1 && (
+            <svg
+              className="absolute left-0 right-0 hidden lg:block md:block"
+              style={{ top: 'calc(100% - 64px)', pointerEvents: 'none' }} // Adjust 64px to match the height of the iframe
+              viewBox="0 0 800 100"
+            >
+              <path
+                d={`M ${index % 2 === 0 ? 600 : 175} 0 C ${index % 2 === 0 ? 700 : 100} 40, ${index % 2 === 0 ? 400 : 400} 60, ${index % 2 === 0 ? 350 : 400} 100`} // Control points adjusted for direction
+                stroke="#000" // Line color
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
         </section>
       ))}
       <Footer />
     </>
   );
 }
-
