@@ -6,6 +6,7 @@ const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const LinkedInStrategy = require("passport-linkedin").Strategy;
+const MicrosoftStrategy = require('passport-microsoft').Strategy;
 const googleClientID = process.env.GOOGLE_CLIENT_ID;
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
 const linkedinClientID = process.env.LINKEDIN_CLIENT_ID;
@@ -138,6 +139,48 @@ app.get("/auth/linkedin/callback", passport.authenticate("linkedin", {
     failureRedirect: "http://localhost:3000/signin"
 }));
 
+//microsoft authorization
+passport.use(new MicrosoftStrategy({
+  clientID: process.env.MICROSOFT_CLIENT_ID,
+  clientSecret: process.env.MICROSOFT_SECRET_VALUE,
+  callbackURL: "http://localhost:4000/auth/microsoft/callback",
+  scope: ['user.read'],
+  tenant: 'common',
+  authorizationURL: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
+  tokenURL: 'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+  graphApiVersion: 'v1.0',
+  addUPNAsEmail: false,
+  apiEntryPoint: 'https://graph.microsoft.com',
+},
+async function(accessToken, refreshToken, profile, done) {
+  // Simulate a user object based on profile information
+  try {
+    const userFromMongo = getCollection("users", "microsoftUsers");
+    let user = await userFromMongo.findOne({ microsoftId: profile.id });
+    if (!user) {
+      user = {
+        microsoftIdId: profile.id,
+        displayName: profile.displayName,
+        email: profile.emails[0].value
+      };
+      await userFromMongo.insertOne(user);
+    }
+    return done(null, user);
+  } catch (error) {
+    return done(error, null);
+  }
+}
+));
+
+app.get('/auth/microsoft',
+  passport.authenticate('microsoft', { prompt: 'select_account' })
+);
+
+app.get('/auth/microsoft/callback', 
+  passport.authenticate('microsoft', { 
+    successRedirect: "http://localhost:3000",
+    failureRedirect: "http://localhost:3000/signin" })
+);
 
 passport.serializeUser((user, done) => {
   done(null, user);
