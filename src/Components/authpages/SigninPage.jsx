@@ -6,13 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGoogle } from '@fortawesome/free-brands-svg-icons';
 export default function SigninPage(){
     const signInWithGoogle = ()=>{
-        window.open("http://localhost:4000/auth/google/callback", "_self")
+        window.open("http://localhost:4000/auth/google", "_self")
     }
     const signInWithLinkedin = () =>{
-        window.open("http://localhost:4000/auth/linkedin/callback", "_self")
+        window.open("http://localhost:4000/auth/linkedin", "_self")
     }
     const handleSubmit = () => {
-        window.open("http://localhost:4000/auth/outlook/callback", "_self");
+        window.open("http://localhost:4000/auth/outlook", "_self");
       }
     return (
         <>
