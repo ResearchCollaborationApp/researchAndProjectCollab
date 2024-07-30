@@ -11,10 +11,7 @@ import {
   SLabelPrefix,
   SLabelSuffix,
   SNotFound,
-  SInput,
-  SIconAndTextWrapper, 
-  SIcon, 
-  SText
+  SInput
 } from "./autocomplete.style";
 import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -51,6 +48,7 @@ export const CompanyAutocomplete = ({ onSubmitSearch, placeholder }) => {
         const res = await fetch(url);
         if (res.ok) {
           const data = await res.json();
+          console.log(data);
           setQueries(data);
         }
       } catch (err) {

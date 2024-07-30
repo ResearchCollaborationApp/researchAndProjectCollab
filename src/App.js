@@ -10,15 +10,14 @@ import {
 //pages
 import Home from './Components/home/home';
 import RootLayout from './layouts/rootLayout';
-import LoginPage from './Components/authpages/LoginPage';
-import SignupPage from './Components/authpages/SignupPage';
+import SigninPage from './Components/authpages/SigninPage';
 import NotFound from './Components/notfound/notFound';
+import FormTemplate from './Components/userInformationForms/formTemplate';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = "/" element = {<RootLayout/>}>
       <Route index element = {<Home/>}></Route>
-      <Route path = "login" element = {<LoginPage/>}></Route>
-      <Route path = "signup" element = {<SignupPage/>}></Route>
+      <Route path = "signin" element = {<SigninPage/>}></Route>
       <Route path = "*" element = {<NotFound/>}/>
     </Route>
   )

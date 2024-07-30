@@ -44,7 +44,7 @@ export default function Home() {
                   {section.description}
                 </p>
                 <Link
-                  to="/signup"
+                  to="/signin"
                   className="mt-8 inline-block rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white transition transform duration-500 ease-in-out hover:scale-110"
                 >
                   {section.linkText}
@@ -62,7 +62,7 @@ export default function Home() {
               <path
                 d={`M ${index % 2 === 0 ? 600 : 175} 0 C ${index % 2 === 0 ? 700 : 100} 40, ${index % 2 === 0 ? 400 : 400} 60, ${index % 2 === 0 ? 350 : 400} 100`} // Control points adjusted for direction
                 stroke="#000" // Line color
-                strokeWidth="2"
+                strokeWidth="1.5"
                 fill="none"
                 strokeLinecap="round"
               />

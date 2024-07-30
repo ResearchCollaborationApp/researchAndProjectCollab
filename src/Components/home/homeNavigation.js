@@ -15,23 +15,13 @@ export default function HomeNavigation() {
         <div className="flex items-center gap-4">
             <div className="flex gap-4">
                 <NavLink 
-                    to = "login"
+                    to = "signin"
                     className={({ isActive }) =>
                         `rounded-md px-5 py-2.5 text-sm font-bold sm:text-xl ${isActive ? 'border-b-2  border-blue-600' : ''}`
                       }
                 >
-                    Login
+                Sign in 
                 </NavLink>
-                <div className="flex gap-4">
-                    <NavLink
-                    to = "signup"
-                    className={({ isActive }) =>
-                        `rounded-md px-5 py-2.5 text-sm font-bold sm:text-xl ${isActive ? 'border-b-2  border-blue-600' : ''}`
-                      }
-                    >
-                    Register
-                    </NavLink>
-                </div>
             </div>
         </div>
         </div>
