@@ -91,7 +91,7 @@ app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "em
 //success redirect should lead the user to dashboard page
 //for now it will take the user to the home page
 app.get("/auth/google/callback", passport.authenticate("google", {
-  successRedirect: "http://localhost:3000",
+  successRedirect: "http://localhost:3000/createprofile",
   failureRedirect: "http://localhost:3000/signin"
 }));
 
@@ -135,7 +135,7 @@ app.get("/auth/linkedin", passport.authenticate("linkedin",{ state: 'JFKDODFK' }
 //success redirect should lead the user to dashboard page
 //for now it will take the user to the home page
 app.get("/auth/linkedin/callback", passport.authenticate("linkedin", {
-    successRedirect: "http://localhost:3000",
+    successRedirect: "http://localhost:3000/createprofile",
     failureRedirect: "http://localhost:3000/signin"
 }));
 
@@ -178,7 +178,7 @@ app.get('/auth/microsoft',
 
 app.get('/auth/microsoft/callback', 
   passport.authenticate('microsoft', { 
-    successRedirect: "http://localhost:3000",
+    successRedirect: "http://localhost:3000/createprofile",
     failureRedirect: "http://localhost:3000/signin" })
 );
 
@@ -190,6 +190,14 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+app.get("/api/user", (req, res)=>{
+  if (req.user){
+    res.json(req.user)
+  }
+  else {
+    res.status(401).json({ message: 'Unauthorized' });
+  }
+})
 
 app.get("/logout",(req,res,next)=>{
   req.logout(function(err){
@@ -197,5 +205,7 @@ app.get("/logout",(req,res,next)=>{
       res.redirect("http://localhost:3000");
   })
 })
+
+
 
 
