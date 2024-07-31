@@ -45,6 +45,18 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/api/posts", async (req, res)=>{
+  const offset = parseInt(req.query.offset) || 0;
+  const limit = parseInt(req.query.limit) || 10;
+  const collection = getCollection("posts", "posts")
+  try {
+    const skills = await collection.find().skip(offset).limit(limit).toArray();
+    res.json(skills);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching movies', error });
+  }
+
+})
 // Setup session
 app.use(session({
   secret: process.env.SESSION_KEY,

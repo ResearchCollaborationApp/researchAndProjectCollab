@@ -14,6 +14,7 @@ import SigninPage from './Components/authpages/SigninPage';
 import NotFound from './Components/notfound/notFound';
 import CreateProfile from './Components/userInformationForms/createProfile';
 import FormTemplate from './Components/userInformationForms/formTemplate';
+import FeedPage from './Components/feedpage/feedPage';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = "/" element = {<RootLayout/>}>
@@ -28,7 +29,8 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <RouterProvider router = {router}/>
+      {/* <RouterProvider router = {router}/> */}
+      <FeedPage/>
     </>
   )
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import ProductCard from "./productCard"
+import PostCard from "./postCard"
 import Loader from "./loader"
 
-const InfiniteScrollTest = () => {
+const ScrollingFeed = () => {
   const [items, setItems] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [index, setIndex] = useState(2);
@@ -11,11 +11,12 @@ const InfiniteScrollTest = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/movies?offset=10&limit=10");
+        const response = await fetch("http://localhost:3000/api/posts?offset=10&limit=10");
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const responseData = await response.json();
+        console.log(responseData);
         // const data = responseData.results;
         setItems(responseData);
         // console.log(data);
@@ -29,7 +30,7 @@ const InfiniteScrollTest = () => {
 
   const fetchMoreData = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/movies?offset=${index}0&limit=10`);
+      const response = await fetch(`http://localhost:3000/api/posts?offset=${index}0&limit=10`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -55,7 +56,7 @@ const InfiniteScrollTest = () => {
       <div className='container'>
         <div className='row'>
           {items &&
-            items.map((item) => <ProductCard data={item} key = {item._id} />)
+            items.map((item) => <PostCard data={item} key = {item._id} />)
           }
         </div>
       </div>
@@ -63,4 +64,4 @@ const InfiniteScrollTest = () => {
   );
 };
 
-export default InfiniteScrollTest;
+export default ScrollingFeed;
