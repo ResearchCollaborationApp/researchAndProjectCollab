@@ -11,7 +11,7 @@ import {
 import Home from './Components/home/home';
 import RootLayout from './layouts/rootLayout';
 import SigninPage from './Components/authpages/SigninPage';
-import NotFound from './Components/notfound/notFound';
+import Error404 from './Components/notfound/notFound';
 import CreateProfile from './Components/userInformationForms/createProfile';
 import FormTemplate from './Components/userInformationForms/formTemplate';
 import FeedPage from './Components/feedpage/feedPage';
@@ -22,15 +22,14 @@ const router = createBrowserRouter(
       <Route path = "signin" element = {<SigninPage/>}></Route>
       <Route path = "createprofile" element = {<CreateProfile/>}></Route>
       <Route path = "profileinformation" element = {<FormTemplate/>}></Route>
-      <Route path = "*" element = {<NotFound/>}/>
+      <Route path = "*" element = {<Error404/>}/>
     </Route>
   )
 )
 function App() {
   return (
     <>
-      {/* <RouterProvider router = {router}/> */}
-      <FeedPage/>
+      <RouterProvider router = {router}/>
     </>
   )
 

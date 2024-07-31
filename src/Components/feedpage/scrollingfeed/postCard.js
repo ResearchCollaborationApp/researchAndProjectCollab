@@ -14,7 +14,6 @@ const PostCard = ({ data }) => {
         className="h-60 w-full object-cover sm:h-80 lg:h-96"
       />
       </div>
-
   </>
   );
 };

@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
-export default function NotFound() {
+
+function Error404() {
   return (
-    <div>
-        <h2>
-            Oops page not found!
-        </h2>
-        <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        </p>
+    <>
+      <div className="grid h-screen place-items-center w-full">
+        <iframe 
+          src="https://lottie.host/embed/95128820-181c-46a5-9eb8-e2aa2f522d4e/QH5Jh3GQfN.json" 
+          className="w-full h-full max-w-2xl max-h-2xl"
+          title="404 Animation"
+        ></iframe>
         <p>Go to <Link to = "/" className="text-cyan-800">homepage</Link></p>
-    </div>
+      </div>
+    </>
   )
 }
+
+export default Error404;

@@ -12,7 +12,6 @@ export default function FeedPage() {
         <ScrollingFeed/>
       </div>
       <div className="h-fit bg-gray-300 hidden lg:block md:block">
-        Researches and several other informations will be displayed here
       </div>
   </div>
   </>
