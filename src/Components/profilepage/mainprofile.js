@@ -1,31 +1,37 @@
-import React from 'react'
+import React from 'react';
+import { EditIcon } from '../Icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 export default function Mainprofile() {
   //add contact info, edit icons in the profile card
   return (
-        <div className="w-full rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
-          <div className="relative">
-            <img
-              src="https://media.sproutsocial.com/uploads/1c_facebook-cover-photo_clean@2x.png"
-              alt="coverphoto"
-              className="h-full w-full rounded-t-lg object-cover sm:h-80 lg:h-96"
-            />
-            <div className="absolute inset-x-0 top-48 sm:top-56 lg:top-64 flex justify-center">
-              <img
-                src="https://img.freepik.com/free-photo/closeup-shot-beautiful-bald-eagle-with-blurred-background_181624-2767.jpg?t=st=1719243095~exp=1719246695~hmac=18a2f4ff487b812cb376855ef7e327e87316ea78265ab9cbbdf88a81a0e003d3&w=900"
-                alt="profilephoto"
-                className="w-24 h-24 rounded-full border-2 border-gray-300 sm:w-32 sm:h-32 lg:w-40 lg:h-40"
-              />
+    <section className="py-10 sm:py-16 lg:py-24">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="text-center">
+          <img className="object-cover w-32 h-32 mx-auto rounded-full border-white" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/4/avatar.jpg" alt="Profile" />
+          <ul className="mt-5 space-y-1">
+            <li className="text-lg font-semibold text-black">Mark Tanker</li>
+            <li className="text-lg font-medium text-black">Junior, Computer Science</li>
+            <li className="text-lg font-medium text-black">Cold Spring, KY</li>
+          </ul>
+          <button className= "text-slate-700 p-1">
+            <EditIcon/>
+          </button>
+          <div className="max-w-xl mx-auto mt-7">
+            <div className="flex justify-center items-center text-xl leading-relaxed text-black mt-4">
+              <FontAwesomeIcon icon={faLinkedin} className="w-7 h-7 text-blue-600" />
+              <span>Northern Kentucky University</span>
+              </div>
+            <div className="flex justify-center items-center text-xl leading-relaxed text-black mt-4">
+                <FontAwesomeIcon icon={faLinkedin} className="w-7 h-7 text-blue-600" />
+              <span>Northern Kentucky University</span>
             </div>
           </div>
-          <div className="flex flex-col items-center mt-10">
-            <ul className="text-center space-y-2">
-              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Bhuwan Bhandari</li>
-              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Junior Computer Science</li>
-              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">Cold Spring, KY</li>
-              <li className="text-base text-gray-900 sm:text-lg lg:text-xl">More</li>
-            </ul>
-          </div>
         </div>
-
-  )
+      </div>
+      
+    </section>
+  );
 }
+

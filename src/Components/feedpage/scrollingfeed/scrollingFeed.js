@@ -11,6 +11,7 @@ const ScrollingFeed = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        //we will call the api once and then handle them using offset and limit
         const response = await fetch("http://localhost:3000/api/posts?offset=10&limit=10");
         if (!response.ok) {
           throw new Error('Network response was not ok');

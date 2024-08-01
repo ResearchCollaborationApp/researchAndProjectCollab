@@ -31,10 +31,11 @@ export default function CreateProfile() {
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
                 <h2 className="text-2xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl">Hi, {user.displayName.split(' ')[0]} welcome to getResearch!</h2>
-                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-900">
+                <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed">
                 You've taken a great step towards your career growth. Dive into discussions with professors and fellow students, explore cutting-edge research, and contribute to our vibrant academic community. Let's innovate together!</p>
             </div>
             <div className="max-w-xl mx-auto mt-12">
+              <p className="flex flex-col items-center sm:flex-row sm:justify-center mb-5">Create your profile today!</p>
                 <div className="flex flex-col items-center sm:flex-row sm:justify-center">
                     <Link 
                     to = "/profileinformation" 

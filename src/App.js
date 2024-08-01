@@ -15,6 +15,8 @@ import Error404 from './Components/notfound/notFound';
 import CreateProfile from './Components/userInformationForms/createProfile';
 import FormTemplate from './Components/userInformationForms/formTemplate';
 import FeedPage from './Components/feedpage/feedPage';
+import UserPostTitle from './Components/feedpage/scrollingfeed/userPostTitle';
+import Mainprofile from './Components/profilepage/mainprofile';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path = "/" element = {<RootLayout/>}>
@@ -29,7 +31,8 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <RouterProvider router = {router}/>
+      {/* <RouterProvider router = {router}/> */}
+      <Mainprofile/>
     </>
   )
 
