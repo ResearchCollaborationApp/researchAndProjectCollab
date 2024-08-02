@@ -1,35 +1,11 @@
 import React from 'react';
-import { EditIcon } from '../Icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import FriendsAndMore from '../feedpage/friends_and_more';
-
+import UserInfo from "./userInfo"
 export default function Mainprofile() {
   //add contact info, edit icons in the profile card
   return (
     <div className="grid grid-cols-1 gap-2 md:col-span-2 lg:grid-cols-4 p-5">
-        <div className="text-center p-4 h-fit bg-slate-100 shadow-md rounded profile">
-          <img className="object-cover w-32 h-32 mx-auto rounded-full border-white" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/4/avatar.jpg" alt="Profile" />
-          <ul className="mt-5 space-y-1">
-            <li className="text-lg font-semibold text-black">Mark Tanker</li>
-            <li className="text-lg font-medium text-black">Junior, Computer Science</li>
-            <li className="text-lg font-medium text-black">Cold Spring, KY</li>
-          </ul>
-          <button className= "text-slate-700 p-1">
-            <EditIcon/>
-          </button>
-          <div className="max-w-xl mx-auto mt-7">
-            <div className="flex justify-center items-center leading-relaxed text-black mt-4">
-              <FontAwesomeIcon icon={faLinkedin} className="w-7 h-7 text-blue-600" />
-              <span className="text-lg">Northern Kentucky University</span>
-              </div>
-            <div className="flex justify-center items-center leading-relaxed text-black mt-4">
-                <FontAwesomeIcon icon={faLinkedin} className="w-7 h-7 text-blue-600" />
-              <span className="text-lg">Northern Kentucky University</span>
-            </div>
-          </div>
-        </div>
-
+        <UserInfo/>
       <div className="h-fit lg:col-span-2 items-center description">
         <div className = "grid grid-cols-1 gap-4">
           <div className=" border-gray-300 bg-slate-100 rounded p-4 shadow-md sm:p-6 lg:p-8">
