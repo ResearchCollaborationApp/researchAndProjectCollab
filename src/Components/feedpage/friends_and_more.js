@@ -1,12 +1,11 @@
-import React from 'react'
-import '../profilepage/profile.css'
+
 export default function FriendsAndMore() {
   return (
     <>
     {/* Profile Link */}
   <div>
     <div
-      className="mb-8 rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6"
+      className="mb-8 rounded-lg border  bg-slate-100 p-4 shadow-sm  sm:p-6"
     >
       <header>
         <h3 className="mt-0.5 text-2xl mb-2 font-medium text-gray-900">
@@ -20,7 +19,7 @@ export default function FriendsAndMore() {
     </div>
 {/* Students in school */}
   <div
-    className="mb-8 rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6"
+    className="mb-8 rounded-lg border bg-slate-100  p-4 shadow-sm  sm:p-6"
   >
     <header>
       <h3 className="mt-0.5 text-2xl mb-2 font-medium text-gray-900">
@@ -28,7 +27,7 @@ export default function FriendsAndMore() {
       </h3>
     </header>
     <hr className="border-t border-gray-300 mt-2"/> 
-      <div className="bg-white p-4">
+      <div className=" p-4">
         <div className="flex items-center gap-4 border-b border-gray-300 pb-4 mb-1 last:border-b-0">
           <img
             alt=""
@@ -50,7 +49,7 @@ export default function FriendsAndMore() {
   </div>
 {/* People you may know */}
   <div
-    className="mb-8 rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6"
+    className="mb-8 rounded-lg border bg-slate-100  p-4 shadow-sm  sm:p-6"
   >
     <header>
       <h3 className="mt-0.5 text-2xl mb-1 font-medium text-gray-900">
@@ -58,7 +57,7 @@ export default function FriendsAndMore() {
       </h3>
     </header>
     <hr className="border-t border-gray-300 mt-2"/> 
-    <div className="bg-white p-4">
+    <div className=" p-4">
         <div className="flex items-center gap-4 border-b border-gray-300 pb-4 mb-1 last:border-b-0">
           <img
             alt=""
