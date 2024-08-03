@@ -217,10 +217,10 @@ app.get("/api/user", (req, res)=>{
   }
 })
 
-app.get("/logout",(req,res,next)=>{
+app.get("/signout",(req,res,next)=>{
   req.logout(function(err){
       if(err){return next(err)}
-      res.redirect("http://localhost:3000");
+      res.redirect("http://localhost:3000/signin");
   })
 })
 

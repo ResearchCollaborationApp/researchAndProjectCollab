@@ -1,9 +1,9 @@
-import React from "react";
-import Footer from "../footer/footer";
+import { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import React from "react";
 export default function SigninPage(){
     const signInWithGoogle = ()=>{
         window.open("http://localhost:4000/auth/google", "_self")
@@ -13,7 +13,11 @@ export default function SigninPage(){
     }
     const signInWithMicrosoft = () => {
         window.open("http://localhost:4000/auth/microsoft", "_self");
+
       }
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <>
         <section className="bg-white">
@@ -69,7 +73,6 @@ export default function SigninPage(){
             </div>
         </div>
     </section>
-    <Footer/>
     </>
     );
 }
