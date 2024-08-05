@@ -6,7 +6,6 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom'
-
 //pages
 import Home from './Components/home/home';
 import RootLayout from './layouts/rootLayout';
@@ -16,9 +15,10 @@ import Error404 from './Components/notfound/notFound';
 import FormTemplate from './Components/userInformationForms/formTemplate';
 import FeedPage from './Components/feedpage/feedPage';
 import UserPostTitle from './Components/feedpage/scrollingfeed/userPostTitle';
-import Mainprofile from './Components/profilepage/mainprofile';
 import CreateProfileLayout from './layouts/createProfileLayout';
 import { userLoader } from './Components/apiLoaders/apiLoaders';
+import UserProfile from './Components/profilepage/profile';
+import InfiniteScrollAnimation from './Components/feedpage/infiniteScrollAnimation';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -39,7 +39,8 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <RouterProvider router = {router}/>
+      {/* <RouterProvider router = {router}/> */}
+      <FeedPage/>
     </>
   )
 

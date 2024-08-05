@@ -5,6 +5,8 @@ import app_logo from '../../images/app_logo.jpeg';
 export default function HomeNavigation({ user }) {
   const [isOpen, setIsOpen] = useState(false);
   const signOut = () =>{
+    console.log("signout clicked")
+    window.open("http://localhost:4000/signout")
   }
   return (
     <header className="bg-slate-50 sticky top-0 z-10">
@@ -57,7 +59,7 @@ export default function HomeNavigation({ user }) {
                       </div>
                       <div className="p-2">
                           <button
-                            onclick = {signOut}
+                            onClick = {signOut}
                             className="flex w-full items-center gap-2 rounded-lg px-4 py-2 text-sm text-red-700 hover:bg-red-50"
                             role="menuitem"
                           >

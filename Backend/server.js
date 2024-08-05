@@ -223,7 +223,3 @@ app.get("/signout",(req,res,next)=>{
       res.redirect("http://localhost:3000/signin");
   })
 })
-
-
-
-
