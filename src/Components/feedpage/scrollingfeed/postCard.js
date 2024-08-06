@@ -2,7 +2,7 @@ import UserPostTitle from "./userPostTitle";
 const PostCard = ({ data }) => {
   return (
     <>
-   <div className="bg-white">
+   <div className="bg-white max-w-xl" >
     <UserPostTitle/>
       <p className="mt-2 max-w-sm text-gray-700">
         {data.body}
