@@ -18,6 +18,7 @@ import UserPostTitle from './Components/feedpage/scrollingfeed/userPostTitle';
 import CreateProfileLayout from './layouts/createProfileLayout';
 import { userLoader } from './Components/apiLoaders/apiLoaders';
 import UserProfile from './Components/profilepage/profile';
+import AutoScroll from './Components/feedpage/autoScroll';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
