@@ -19,6 +19,7 @@ import CreateProfileLayout from './layouts/createProfileLayout';
 import { userLoader } from './Components/apiLoaders/apiLoaders';
 import UserProfile from './Components/profilepage/profile';
 import AutoScroll from './Components/feedpage/autoScroll';
+import ModalTrigger from './Components/assets/modalTrigger';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
