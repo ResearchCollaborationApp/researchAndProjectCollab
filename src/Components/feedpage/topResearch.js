@@ -37,7 +37,7 @@ function TopResearch() {
               Molestias explicabo corporis voluptatem?
             </p>
 
-            <a href="#" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+            <a href="#" className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
               Find out more
 
               <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
