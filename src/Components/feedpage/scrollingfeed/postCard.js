@@ -9,22 +9,22 @@ const PostCard = ({ data }) => {
   };
 
   return (
-    <div className="h-fit rounded-md p-2 bg-white w-full mb-3">
+    <div className="h-fit rounded-md  bg-white w-full mb-3">
       <UserPostTitle />
-      <p className={`mt-2 max-w-sm text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
+      <p className={`mt-2 p-1 max-w-sm font-semibold text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
         {data.body}
         
       </p>
       <button
         onClick={handleToggle}
-        className="text-blue-600 font-semibold mt-1"
+        className="text-blue-600 ml-2 font-semibold mt-1"
       >
         {isExpanded ? "See Less" : "See More"}
       </button>
       <img
         alt="movie-poster"
         src="https://as1.ftcdn.net/v2/jpg/02/43/25/90/1000_F_243259090_crbVsAqKF3PC2jk2eKiUwZHBPH8Q6y9Y.jpg"
-        className="h-70 w-full object-cover sm:h-80 lg:h-96"
+        className="h-70 w-70 w-full object-cover sm:h-80 lg:h-96"
       />
     </div>
   );
