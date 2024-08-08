@@ -6,17 +6,17 @@ import TopResearch from "./topResearch"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
-import ModalHandler from "../assets/modals"
+import ModalHandler from "../assets/modalHandler"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 export default function FeedPage() {
   const [open, setOpen] = useState(false)
   return (
     <>
     <Navigation/>
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7 lg:gap-6 lg:mx-8 px-8">
+    <div className="grid px-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:gap-3 lg:mx-3 lg:px-8">
       <div className="h-fit hidden lg:block md:block lg:col-span-2">
         <div className="max-w-sm overflow-hidden shadow-md">
-          <h1 className=" bg-gray-200 px-6 py-4 font-bold text-lg">
+          <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg">
             Top Research in School
           </h1>
           <TopResearch/>
@@ -24,7 +24,7 @@ export default function FeedPage() {
         </div>
       </div>
       <div className="h-fit col-span-1 lg:col-span-3">
-        <div className = "flex-col border rounded-md items-center h-fit w-full bg-white mb-4 ">
+        <div className = "flex-col border rounded-md items-center h-fit w-full bg-gray-200 mb-4 ">
           <div className="flex items-center gap-4 py-1 px-3">
             <img
             alt=""
@@ -33,39 +33,35 @@ export default function FeedPage() {
           />
             <button 
             onClick={() => setOpen(true)}
-            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-gray-200 border rounded-3xl border-slate-300">
+            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-gray-400 border rounded-3xl border-slate-300">
               Share something...
             </button>
             <FontAwesomeIcon icon={faPlus} className="size-6 "/>
           </div>
           <ModalHandler open={open} onClose={() => setOpen(false)}>
-            <div className="text-center w-56">
-              <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-              <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-                  <form action="#" class="space-y-4">
+            <div className="w-full p-3">
+              <div className="mx-auto max-w-screen-xl">
+                  <form action="#" className="space-y-4">
                     <div>
-                      <label class="sr-only" for="message">Message</label>
+                      <label className="sr-only" for="message">Message</label>
                       <textarea
-                        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                        className="w-full rounded-lg border-gray-500 bg-gray-200 p-3 text-sm"
                         placeholder="What do you want to talk?"
                         rows="8"
                         id="message"
-                      ></textarea>
+                      />
                     </div>
-                    <div class="mt-4">
+                    <div className="mt-4">
                       <button
                         type="submit"
-                        class="inline-block w-full rounded-lg bg-slate-600 px-5 py-3 font-medium text-white sm:w-auto"
+                        className="inline-block text-end w-full rounded-lg bg-slate-600 px-5 py-3 font-medium text-white sm:w-auto"
                       >
-                      Post
+                        Post
                       </button>
                     </div>
                   </form>
-       
-            </div>
               </div>
-              <div className="flex gap-4">
-                <button className="btn btn-danger w-full">Delete</button>
+              <div className="flex text-start gap-4">
                 <button
                   className="btn btn-light w-full"
                   onClick={() => setOpen(false)}
@@ -79,7 +75,7 @@ export default function FeedPage() {
         <ScrollingFeed/>
       </div>
       <div className="h-fit lg:col-span-2 hidden border-rounded lg:block md:block">
-      <h1 className=" bg-gray-200 px-6 py-4 font-bold text-lg">
+      <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg">
           Latest Research
         </h1>
         <AutoScroll/>

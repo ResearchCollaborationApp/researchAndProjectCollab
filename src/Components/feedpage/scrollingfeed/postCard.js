@@ -9,9 +9,9 @@ const PostCard = ({ data }) => {
   };
 
   return (
-    <div className="h-fit rounded-md  bg-white w-full mb-3">
+    <div className="h-fit rounded-md  bg-gray-200 w-full mb-3">
       <UserPostTitle />
-      <p className={`mt-2 p-1 max-w-sm font-semibold text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
+      <p className={`m-3 p-1 w-fit font-semibold text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
         {data.body}
         
       </p>
