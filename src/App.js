@@ -14,11 +14,10 @@ import CreateProfile from './Components/userInformationForms/createProfile';
 import Error404 from './Components/notfound/notFound';
 import FormTemplate from './Components/userInformationForms/formTemplate';
 import FeedPage from './Components/feedpage/feedPage';
-import UserPostTitle from './Components/feedpage/scrollingfeed/userPostTitle';
 import CreateProfileLayout from './layouts/createProfileLayout';
 import { userLoader } from './Components/apiLoaders/apiLoaders';
-import UserProfile from './Components/profilepage/profile';
-import AutoScroll from './Components/feedpage/autoScroll';
+import TopResearchPage from './Components/navPages/topResearchPage';
+import FeedPageLayout from './layouts/feedPageLayout';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -30,7 +29,12 @@ const router = createBrowserRouter(
         <Route 
         index element = {<CreateProfile/>}
         loader ={userLoader}
-        ></Route>
+        >
+        </Route>
+        <Route path = "feedpage" element = {<FeedPageLayout/>}>
+          <Route index element = {<FeedPage/>}></Route>
+          <Route path = "topresearchpage" element = {<TopResearchPage/>}></Route>
+        </Route>
         <Route path = "profileinformation" element = {<FormTemplate/>}></Route>
       </Route>
      </>
@@ -39,8 +43,8 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      {/* <RouterProvider router = {router}/> */}
-      <FeedPage/>
+      <RouterProvider router = {router}/>
+    {/* <TopResearchPage/> */}
     </>
   )
 

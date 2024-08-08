@@ -1,6 +1,6 @@
-import React from 'react'
 
-function TopResearch() {
+import { Link } from "react-router-dom";
+function TopResearch({inResearchPage}) {
   return (
     <div className="p-5 bg-white ">
           <span className="inline-block rounded bg-blue-600 p-2 text-white">
@@ -23,28 +23,43 @@ function TopResearch() {
                 />
               </svg>
             </span>
-
-            <a href="#">
-              <h3 className="mt-0.5 text-lg font-medium text-gray-900">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              <h3 className="mt-0.5 text-lg font-semibold text-gray-900">
+               Eye Tracking Research
               </h3>
-            </a>
-
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur
-              animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem, mollitia
-              itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-              Molestias explicabo corporis voluptatem?
+            <p className={`mt-2 ${inResearchPage? 'line-clamp-none' : 'line-clamp-3'} text-md/relaxed text-gray-800`}>
+            Albert Einstein was awarded the Nobel Prize in Physics in 1921 for his discovery of the photoelectric effect, a phenomenon where light shined on a material releases electrons from its surface. Einstein's work provided crucial evidence for the existence of photons, particles of light, and supported the quantum theory of light, challenging the classical wave theory. His explanation demonstrated that the energy of these emitted electrons depends on the light's frequency rather than its intensity. This groundbreaking insight not only advanced the field of quantum mechanics but also paved the way for significant technological innovations, such as the development of photoelectric cells and advancements in quantum electronics.
             </p>
-
-            <a href="#" className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
-              Find out more
-
-              <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
-                &rarr;
-              </span>
-            </a>
-            <hr></hr>
+            {
+              inResearchPage ? 
+              (
+                <div className = "flex gap-8">
+                  <Link to="#" className="mt-4 inline-flex items-center gap-1 text-md font-semibold text-blue-600">
+                  Talk to Professor
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="currentColor" className="size-3">
+                    <path fillRule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clipRule="evenodd" />
+                  </svg>
+                  </Link>
+                  <Link to="#" className=" mt-4 inline-flex items-center gap-1 text-md font-semibold text-blue-600">
+                  Add to your readings
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+                  </svg>
+                  </Link>
+               </div>
+              ): 
+              (
+                <Link
+                to="topresearchpage" 
+                className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                Find out more
+                <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
+                  &rarr;
+                </span>
+              </Link>
+              )
+            }
+            
+            <hr className="border-t border-gray-300 my-4" />
         </div>
   )
 }

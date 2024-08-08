@@ -12,7 +12,6 @@ export default function FeedPage() {
   const [open, setOpen] = useState(false)
   return (
     <>
-    <Navigation/>
     <div className="grid px-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:gap-3 lg:mx-3 lg:px-8">
       <div className="h-fit hidden lg:block md:block lg:col-span-2">
         <div className="max-w-sm overflow-hidden shadow-md">
