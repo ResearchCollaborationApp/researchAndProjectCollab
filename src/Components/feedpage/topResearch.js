@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 function TopResearch({inResearchPage}) {
   return (
-    <div className="p-5 bg-white ">
+    <div className="p-5 bg-gray-200 ">
           <span className="inline-block rounded bg-blue-600 p-2 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ function TopResearch({inResearchPage}) {
               (
                 <Link
                 to="topresearchpage" 
-                className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-600">
+                className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold ">
                 Find out more
                 <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
                   &rarr;
@@ -59,7 +59,7 @@ function TopResearch({inResearchPage}) {
               )
             }
             
-            <hr className="border-t border-gray-300 my-4" />
+            <hr className="border-t-2 border-blue-500 my-4" />
         </div>
   )
 }

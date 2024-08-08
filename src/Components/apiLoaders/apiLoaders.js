@@ -14,3 +14,17 @@ export const userLoader = async () =>{
       }
 };
 
+export const nobelLoader = async () =>{
+  try {
+    const response = await fetch("http://api.nobelprize.org/2.1/nobelPrizes?offset=10&limit=10&sort=asc");
+    if (response.ok) {
+      const nobelData = await response.json();
+      return nobelData;
+    } else {
+      console.error('Failed to fetch nobel data');
+    }
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+  }
+}
+

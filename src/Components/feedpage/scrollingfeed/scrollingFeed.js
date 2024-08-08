@@ -17,7 +17,6 @@ const ScrollingFeed = () => {
           throw new Error('Network response was not ok');
         }
         const responseData = await response.json();
-        console.log(responseData);
         // const data = responseData.results;
         setItems(responseData);
         // console.log(data);

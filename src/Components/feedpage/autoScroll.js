@@ -3,8 +3,8 @@ import './autoScroll.css'
 import ResearchCard from './researchCard'
 function AutoScroll() {
   return (
-    <div class = "flex-col overflow-hidden space-y-0 group">
-        <div class="flex-col space-y-0 animate-loop-scroll group-hover:paused">
+    <div className = "flex-col  overflow-hidden space-y-0 group">
+        <div className="flex-col space-y-0 animate-loop-scroll group-hover:paused">
             <ResearchCard/>
             <ResearchCard/>
             <ResearchCard/>
@@ -13,7 +13,7 @@ function AutoScroll() {
             <ResearchCard/>
             <ResearchCard/>
         </div>
-        <div class="flex-col space-y-0 animate-loop-scroll group-hover:paused" aria-hidden="true">
+        <div className="flex-col space-y-0 animate-loop-scroll group-hover:paused" aria-hidden="true">
             <ResearchCard/>
             <ResearchCard/>
             <ResearchCard/>

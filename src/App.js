@@ -6,6 +6,9 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom'
+//loaders
+import { userLoader } from './Components/apiLoaders/apiLoaders';
+import { nobelLoader } from './Components/apiLoaders/apiLoaders';
 //pages
 import Home from './Components/home/home';
 import RootLayout from './layouts/rootLayout';
@@ -15,9 +18,9 @@ import Error404 from './Components/notfound/notFound';
 import FormTemplate from './Components/userInformationForms/formTemplate';
 import FeedPage from './Components/feedpage/feedPage';
 import CreateProfileLayout from './layouts/createProfileLayout';
-import { userLoader } from './Components/apiLoaders/apiLoaders';
 import TopResearchPage from './Components/navPages/topResearchPage';
 import FeedPageLayout from './layouts/feedPageLayout';
+import AutoScroll from './Components/feedpage/autoScroll';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -32,7 +35,9 @@ const router = createBrowserRouter(
         >
         </Route>
         <Route path = "feedpage" element = {<FeedPageLayout/>}>
-          <Route index element = {<FeedPage/>}></Route>
+          <Route 
+            index element = {<FeedPage/>}>
+          </Route>
           <Route path = "topresearchpage" element = {<TopResearchPage/>}></Route>
         </Route>
         <Route path = "profileinformation" element = {<FormTemplate/>}></Route>
@@ -44,7 +49,6 @@ function App() {
   return (
     <>
       <RouterProvider router = {router}/>
-    {/* <TopResearchPage/> */}
     </>
   )
 

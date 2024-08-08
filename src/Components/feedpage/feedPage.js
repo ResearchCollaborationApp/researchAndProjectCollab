@@ -1,5 +1,4 @@
-import Navigation from "../navbar/navigation"
-import UserInfo from "../profilepage/userInfo"
+
 import AutoScroll from "./autoScroll"
 import ScrollingFeed from "./scrollingfeed/scrollingFeed"
 import TopResearch from "./topResearch"
@@ -7,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import ModalHandler from "../assets/modalHandler"
-import { faTrash } from "@fortawesome/free-solid-svg-icons"
+
 export default function FeedPage() {
   const [open, setOpen] = useState(false)
   return (
