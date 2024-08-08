@@ -24,7 +24,7 @@ export default function FeedPage() {
         </div>
       </div>
       <div className="h-fit col-span-1 lg:col-span-3">
-        <div className = "flex-col border rounded-md items-center h-fit w-full bg-gray-200 mb-4 ">
+        <div className = "flex-col border rounded-md items-center h-fit w-full bg-white mb-4 ">
           <div className="flex items-center gap-4 py-1 px-3">
             <img
             alt=""
@@ -33,7 +33,7 @@ export default function FeedPage() {
           />
             <button 
             onClick={() => setOpen(true)}
-            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-gray-400 border rounded-3xl border-slate-300">
+            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-gray-200 border rounded-3xl border-slate-300">
               Share something...
             </button>
             <FontAwesomeIcon icon={faPlus} className="size-6 "/>

@@ -2,7 +2,7 @@ import React from 'react'
 
 function TopResearch() {
   return (
-    <div className="p-5 bg-gray-200 ">
+    <div className="p-5 bg-white ">
           <span className="inline-block rounded bg-blue-600 p-2 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
