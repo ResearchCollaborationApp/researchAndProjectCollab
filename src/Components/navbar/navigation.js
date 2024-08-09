@@ -9,7 +9,7 @@ export default function Navigation() {
   };
 
   return (
-    <header className="pb-6 mb-4 bg-gray-200 lg:pb-0 w-full sticky top-0 z-10">
+    <header className="pb-6 mb-4 bg-white lg:pb-0 w-full sticky top-0 z-10">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* lg+ */}
         <nav className="flex items-center justify-between h-15 lg:h-20">
@@ -36,11 +36,11 @@ export default function Navigation() {
           </button>
 
           <div className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-            <a href="#" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home</a>
-            <a href="#" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> My Collabs </a>
-            <a href="#" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Top Research </a>
-            <a href="#" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Latest Research </a>
-            <a href="#" title="" className="text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Me</a>
+            <a href="#" title="" className="text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home</a>
+            <a href="#" title="" className="text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> My Collabs </a>
+            <a href="#" title="" className="text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Top Research </a>
+            <a href="#" title="" className="text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Latest Research </a>
+            <a href="#" title="" className="text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Me</a>
           </div>
         </nav>
 
@@ -48,11 +48,11 @@ export default function Navigation() {
         <nav className={`${menuOpen ? 'block' : 'hidden'} pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden`}>
           <div className="flow-root">
             <div className="flex flex-col px-6 -my-2 space-y-1">
-              <a href="#" title="" className="inline-flex py-2 text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home </a>
-              <a href="#" title="" className="inline-flex py-2 text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> My Collabs </a>
-              <a href="#" title="" className="inline-flex py-2 text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Top Research </a>
-              <a href="#" title="" className="inline-flex py-2 text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Latest Research </a>
-              <a href="#" title="" className="inline-flex py-2 text-base font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Me </a>
+              <a href="#" title="" className="inline-flex py-2 text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Home </a>
+              <a href="#" title="" className="inline-flex py-2 text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> My Collabs </a>
+              <a href="#" title="" className="inline-flex py-2 text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Top Research </a>
+              <a href="#" title="" className="inline-flex py-2 text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Latest Research </a>
+              <a href="#" title="" className="inline-flex py-2 text-base font-bold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Me </a>
             </div>
           </div>
         </nav>

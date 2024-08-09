@@ -73,7 +73,7 @@ export default function FeedPage() {
         <ScrollingFeed/>
       </div>
       <div className="h-fit lg:col-span-2 hidden border-rounded lg:block md:block">
-      <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg">
+      <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg ">
           Latest Research
         </h1>
         <AutoScroll/>

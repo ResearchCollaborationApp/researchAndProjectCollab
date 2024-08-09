@@ -2,8 +2,8 @@ import TopResearch from "../feedpage/topResearch"
 
 function TopResearchPage() {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 p-3'>
-        <div className= "h-fit bg-slate-300 ">
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 p-3'>
+        <div className= "h-screen bg-slate-300 border rounded-md ">
             <section class="py-10 bg-white sm:py-16 lg:py-24">
                 <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-2xl">Read below about on campus research!</h2>
@@ -36,8 +36,10 @@ function TopResearchPage() {
                 </div>
             </section>
         </div>
-        <div className= "h-fit bg-slate-300 lg:col-span-2">
+        <div className= "h-fit overflow-y-scroll bg-slate-300 lg:col-span-2 border rounded-md">
           <TopResearch inResearchPage = {true}/>
+          <TopResearch inResearchPage={true}/>
+          <TopResearch inResearchPage={true}/>
           <TopResearch inResearchPage={true}/>
         </div>
     </div>

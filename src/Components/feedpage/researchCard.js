@@ -1,6 +1,6 @@
 function ResearchCard() {
   return (
-    <div className=" bg-gray-200">
+    <div className=" bg-white">
         <div className="relative">
             <a href="#" title="" className="block aspect-w-4 aspect-h-3">
                 <img className="object-cover w-full h-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-1.jpg" alt="" />
