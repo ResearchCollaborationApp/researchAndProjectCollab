@@ -87,13 +87,14 @@ passport.use(
         const userFromMongo = getCollection("users", "googleUsers");
         let user = await userFromMongo.findOne({ googleId: profile.id });
         if (!user) {
-          user = {
-            googleId: profile.id,
-            displayName: profile.displayName,
-            email: profile.emails[0].value,
-            image: profile.photos[0].value
-          };
+            user = {
+              googleId: profile.id,
+              displayName: profile.displayName,
+              email: profile.emails[0].value,
+              image: profile.photos[0].value
+            };
           await userFromMongo.insertOne(user);
+          isNewUser = true;
         }
         return done(null, user);
       } catch (error) {
@@ -220,6 +221,6 @@ app.get("/api/user", (req, res)=>{
 app.get("/signout",(req,res,next)=>{
   req.logout(function(err){
       if(err){return next(err)}
-      res.redirect("http://localhost:3000/signin");
+      res.redirect("http://localhost:3000");
   })
 })

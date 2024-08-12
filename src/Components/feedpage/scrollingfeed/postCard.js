@@ -2,7 +2,7 @@ import { useState } from "react";
 import UserPostTitle from "./userPostTitle";
 
 const PostCard = ({ data }) => {
-  const likeColor = "purple", saveColor = "purple";
+  const likeColor = "purple";
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -29,15 +29,15 @@ const PostCard = ({ data }) => {
   return (
     <div className="h-fit rounded-md  bg-white w-full mb-3">
       <UserPostTitle />
-      <p className={`m-3 p-1 w-fit font-semibold text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
+      <p className={`mx-2 p-1 w-fit font-semibold text-gray-700 ${isExpanded ? "" : "line-clamp-3"}`}>
         {data.body}
         
       </p>
       <button
         onClick={handleToggle}
-        className="text-blue-600 ml-2 font-semibold mt-1"
+        className="text-indigo-600 ml-2 font-semibold"
       >
-        {isExpanded ? "See Less" : "See More"}
+        {isExpanded ? "see less" : "..see more"}
       </button>
       <img
         alt="movie-poster"

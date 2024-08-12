@@ -13,8 +13,8 @@ export default function FeedPage() {
     <>
     <div className="grid px-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:gap-3 lg:mx-3 lg:px-8">
       <div className="h-fit hidden lg:block md:block lg:col-span-2">
-        <div className="max-w-sm h-screen overflow-y-auto shadow-md">
-          <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg">
+        <div className="max-w-sm  shadow-md">
+          <h1 className=" bg-slate-200 px-6 py-4 font-bold text-lg">
             Top Research in School
           </h1>
           <TopResearch/>
@@ -30,7 +30,7 @@ export default function FeedPage() {
           />
             <button 
             onClick={() => setOpen(true)}
-            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-gray-200 border rounded-3xl border-slate-300">
+            className = "text-left font-medium ml-3 my-3 w-2/3 h-fit p-3 bg-slate-200 border rounded-3xl border-slate-300">
               Share something...
             </button>
             <FontAwesomeIcon icon={faPlus} className="size-6 "/>
@@ -72,7 +72,7 @@ export default function FeedPage() {
         <ScrollingFeed/>
       </div>
       <div className="h-fit lg:col-span-2 hidden border-rounded lg:block md:block">
-      <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg ">
+      <h1 className=" bg-slate-200 px-6 py-4 font-bold text-lg ">
           Latest Research
         </h1>
         <AutoScroll/>

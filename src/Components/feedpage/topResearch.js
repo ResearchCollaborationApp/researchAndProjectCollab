@@ -45,7 +45,7 @@ function TopResearch({ inResearchPage }) {
   ];
 
   return (
-    <div className="divide-y divide-blue-500">
+    <div className="divide-y divide-blue-500 h-screen overflow-y-auto">
       {researchArray.map((research, index) => (
         <div key={index} className="p-4 bg-white">
           <span className="inline-block rounded bg-blue-600 p-2 text-white">
@@ -82,7 +82,7 @@ function TopResearch({ inResearchPage }) {
             <div className="flex gap-8">
               <Link
                 to="#"
-                className="mt-4 inline-flex items-center gap-1 text-md font-semibold text-blue-600"
+                className="mt-4 inline-flex items-center gap-1 text-md font-bold text-indigo-600"
               >
                 Talk to Professor
                 <svg
@@ -100,7 +100,7 @@ function TopResearch({ inResearchPage }) {
               </Link>
               <Link
                 to="#"
-                className="mt-4 inline-flex items-center gap-1 text-md font-semibold text-blue-600"
+                className="mt-4 inline-flex items-center gap-1 text-md font-bold text-indigo-600"
               >
                 Add to your readings
                 <svg

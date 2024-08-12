@@ -9,7 +9,7 @@ export default function HomeNavigation({ user }) {
     window.open("http://localhost:4000/signout")
   }
   return (
-    <header className="bg-slate-50 sticky top-0 z-10">
+    <header className="bg-slate-300 sticky top-0 z-10">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">

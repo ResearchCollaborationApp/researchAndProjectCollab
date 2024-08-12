@@ -4,8 +4,8 @@ function TopResearchPage() {
   return (
     <div className=" px-3">
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
-            <div className= " bg-slate-300 border rounded-md ">
-                <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg">
+            <div className= " border rounded-md ">
+                <h1 className=" bg-gray-300 px-6 py-4 font-bold text-lg">
                 Read below about on campus research!
                 </h1>
                 <section className="py-10 h-screen bg-white sm:py-16 lg:py-24 overflow-y-auto">
@@ -15,7 +15,7 @@ function TopResearchPage() {
                                 <div>
                                     <p className="text-xl font-semibold text-black">How to apply?</p>
                                     <p className="mt-3 text-base text-gray-600">Interested in joining an on-campus research project? We welcome students who are passionate about research and eager to contribute to ongoing studies. To apply, simply follow the link below. This will take you to a list of available research opportunities, where you can learn more about each project and submit your application.</p>
-                                    <p className="mt-3 mb-3 text-base text-gray-600">You can find the application link <a href="" className="font-semibold text-blue-600">here</a></p>
+                                    <p className="mt-3 mb-3 text-base text-gray-600">You can find the application link <a href="" className="font-semibold text-indigo-600">here</a></p>
                                 </div>
 
                                 <div className="py-9">
@@ -40,7 +40,7 @@ function TopResearchPage() {
                 </section>
             </div>
             <div className= "h-screen overflow-y-auto bg-slate-300 lg:col-span-2 border rounded-md right">
-                <h1 className=" bg-gray-400 px-6 py-4 font-bold text-lg sticky top-0">
+                <h1 className=" bg-gray-300 px-6 py-4 font-bold text-lg sticky top-0">
                 Read below about on campus research!
                 </h1>
                 <TopResearch inResearchPage = {true}/>
