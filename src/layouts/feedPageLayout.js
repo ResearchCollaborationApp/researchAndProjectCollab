@@ -12,7 +12,6 @@ export default function FeedPageLayout() {
   
   // Usage
   const user = fetchUserData();
-  
   if(!user){
     console.log("no such user")
   }

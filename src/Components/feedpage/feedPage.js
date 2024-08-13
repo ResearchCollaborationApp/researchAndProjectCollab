@@ -8,7 +8,6 @@ import { useState } from "react"
 import ModalHandler from "../assets/modalHandler"
 export default function FeedPage() {
   const [open, setOpen] = useState(false)
-
   return (
     <>
     <div className="grid px-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:gap-3 lg:mx-3 lg:px-8">

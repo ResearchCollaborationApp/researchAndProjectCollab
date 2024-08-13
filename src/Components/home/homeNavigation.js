@@ -20,7 +20,6 @@ export default function Navigation({ user }) {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logos and Sign In/Sign Out */}
-          <div className="flex items-center gap-4">
             <NavLink to="/" className="block text-teal-600">
               <span className="sr-only">Home</span>
               <img className="rounded max-h-12 w-auto lg:max-h-14" src={app_logo} alt="app-logo" />
@@ -106,7 +105,6 @@ export default function Navigation({ user }) {
                 </div>
               </>
             )}
-          </div>
         </div>
       </div>
     </header>

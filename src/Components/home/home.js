@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-
+import Footer from '../footer/footer';
+import Navigation from './homeNavigation';
 export default function Home() {
   const sections = [
     {
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <>
+    <Navigation/>
       {sections.map((section, index) => (
           <section className="relative">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -69,6 +71,7 @@ export default function Home() {
             )}
           </section>
       ))}
+      <Footer/>
     </>
   );
 }

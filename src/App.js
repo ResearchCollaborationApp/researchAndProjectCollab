@@ -24,7 +24,7 @@ import AutoScroll from './Components/feedpage/autoScroll';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-    <Route path="/" element={<RootLayout/>}>
+    <Route path="/"  element={<RootLayout/>}>
       <Route index element={<Home/>} />
       <Route path="signin" element={<SigninPage/>} />
 
@@ -41,7 +41,7 @@ const router = createBrowserRouter(
       loader = {userLoader}
       path="feedpage" 
       element={<FeedPageLayout/>}>
-        <Route index element={<FeedPage/>} />
+        <Route  element={<FeedPage/>} />
         <Route path="topresearchpage" element={<TopResearchPage/>} />
       </Route>
     </Route>

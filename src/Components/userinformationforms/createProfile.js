@@ -1,11 +1,12 @@
 import { Link, useLoaderData} from "react-router-dom"
-import HomeNavigation from "../home/homeNavigation";
+import Navigation from "../home/homeNavigation";
 import { useState, useEffect } from "react";
 
 export default function CreateProfile() {
     const user = useLoaderData();
   return (
     <div>
+    <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
