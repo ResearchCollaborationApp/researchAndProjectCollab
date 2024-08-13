@@ -1,15 +1,23 @@
 import { Outlet } from "react-router-dom"
-import { useLocation } from "react-router-dom";
-import Navigation from "../Components/navbar/navigation"
+import { useLocation, useLoaderData } from "react-router-dom";
 export default function FeedPageLayout() {
   const location = useLocation();
-  const user = location.state;
+  const loaderData = useLoaderData();
+  const fetchUserData =  () => {
+    if (location.state) {
+      return location.state;
+    }
+     return loaderData;
+  };
+  
+  // Usage
+  const user = fetchUserData();
+  
   if(!user){
     console.log("no such user")
   }
   return (
     <>
-    <Navigation user = {user}/>
     <main>
         <Outlet/>
       </main>

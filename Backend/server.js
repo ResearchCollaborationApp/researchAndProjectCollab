@@ -94,9 +94,9 @@ passport.use(
               image: profile.photos[0].value
             };
           await userFromMongo.insertOne(user);
-          isNewUser = true;
+          return done(null, user, {firstTimeUser: true})
         }
-        return done(null, user);
+        return done(null, user, {firstTimeUser:false});
       } catch (error) {
         return done(error, null);
       }
@@ -109,10 +109,31 @@ app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "em
 
 //success redirect should lead the user to dashboard page
 //for now it will take the user to the home page
-app.get("/auth/google/callback", passport.authenticate("google", {
-  successRedirect: "http://localhost:3000/createprofile",
-  failureRedirect: "http://localhost:3000/signin"
-}));
+app.get("/auth/google/callback", (req, res, next) => {
+  passport.authenticate("google", (err, user, info) => {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.redirect("http://localhost:3000/signin");
+    }
+
+    req.logIn(user, (err) => {
+      if (err) {
+        return next(err);
+      }
+
+      // Check if the user is logging in for the first time
+      if (info.firstTimeUser) {
+        console.log("is a first time user")
+        return res.redirect("http://localhost:3000/createprofile");
+      }
+      console.log("is already a member at getResearch")
+      return res.redirect("http://localhost:3000/feedpage");
+    });
+  })(req, res, next);
+});
+
 
 //linkedin authorization
 passport.use(

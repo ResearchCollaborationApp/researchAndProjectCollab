@@ -24,24 +24,28 @@ import AutoScroll from './Components/feedpage/autoScroll';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-    <Route path = "/" element = {<RootLayout/>}>
-      <Route index element = {<Home/>}></Route>
-      <Route path = "signin" element = {<SigninPage/>}></Route>
-    </Route>
-      <Route path = "createprofile" element = {<CreateProfileLayout/>}>
+    <Route path="/" element={<RootLayout/>}>
+      <Route index element={<Home/>} />
+      <Route path="signin" element={<SigninPage/>} />
+
+      {/* Routes accessible independently */}
+      <Route path="createprofile" element={<CreateProfileLayout/>}>
         <Route 
-        index element = {<CreateProfile/>}
-        loader ={userLoader}
-        >
-        </Route>
-        <Route path = "feedpage" element = {<FeedPageLayout/>}>
-          <Route 
-            index element = {<FeedPage/>}>
-          </Route>
-          <Route path = "topresearchpage" element = {<TopResearchPage/>}></Route>
-        </Route>
-        <Route path = "profileinformation" element = {<FormTemplate/>}></Route>
+          loader = {userLoader}
+          index element={<CreateProfile/>} 
+        />
+        <Route path="profileinformation" element={<FormTemplate/>} />
       </Route>
+
+      <Route 
+      loader = {userLoader}
+      path="feedpage" 
+      element={<FeedPageLayout/>}>
+        <Route index element={<FeedPage/>} />
+        <Route path="topresearchpage" element={<TopResearchPage/>} />
+      </Route>
+    </Route>
+
      </>
   )
 )
