@@ -4,6 +4,7 @@ import Footer from '../Components/footer/footer'
 export default function RootLayout() {
   return (
     <div>
+      <Navigation/>
      <main>
         <Outlet/>
       </main>

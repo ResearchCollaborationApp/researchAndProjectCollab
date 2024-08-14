@@ -10,6 +10,7 @@ import {
 import { userLoader } from './Components/apiLoaders/apiLoaders';
 import { nobelLoader } from './Components/apiLoaders/apiLoaders';
 //pages
+import ProtectedRoutes from './Components/authpages/protectedRoutes';
 import Home from './Components/home/home';
 import RootLayout from './layouts/rootLayout';
 import SigninPage from './Components/authpages/SigninPage';
@@ -28,24 +29,22 @@ const router = createBrowserRouter(
       <Route index element={<Home/>} />
       <Route path="signin" element={<SigninPage/>} />
 
-      {/* Routes accessible independently */}
-      <Route path="createprofile" element={<CreateProfileLayout/>}>
-        <Route 
-          loader = {userLoader}
-          index element={<CreateProfile/>} 
-        />
-        <Route path="profileinformation" element={<FormTemplate/>} />
+      {/* These are protected routes*/}
+      <Route element={<ProtectedRoutes/>}>
+        <Route path="createprofile" element={<CreateProfileLayout/>}>
+          <Route 
+            index element={<CreateProfile/>} 
+          />
+          <Route path="profileinformation" element={<FormTemplate/>} />
+        </Route>
       </Route>
-
       <Route 
-      loader = {userLoader}
       path="feedpage" 
       element={<FeedPageLayout/>}>
         <Route  element={<FeedPage/>} />
         <Route path="topresearchpage" element={<TopResearchPage/>} />
       </Route>
     </Route>
-
      </>
   )
 )

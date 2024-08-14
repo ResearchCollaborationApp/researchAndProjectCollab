@@ -24,17 +24,6 @@ export default function Navigation({ user }) {
               <span className="sr-only">Home</span>
               <img className="rounded max-h-12 w-auto lg:max-h-14" src={app_logo} alt="app-logo" />
             </NavLink>
-            {!user ? (
-              <NavLink 
-                to="signin"
-                className={({ isActive }) =>
-                  `rounded-md px-5 py-2.5 text-sm font-bold sm:text-xl ${isActive ? 'border-b-2 border-blue-600' : ''}`
-                }
-              >
-                Sign in
-              </NavLink>
-            ) : (
-              <>
                 <button
                   type="button"
                   className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
@@ -66,10 +55,18 @@ export default function Navigation({ user }) {
                     </div>
                   </div>
                 </nav>
+                <NavLink 
+                to="signin"
+                className={({ isActive }) =>
+                  `rounded-md px-5 py-2.5 text-sm font-bold sm:text-xl ${isActive ? 'border-b-2 border-blue-600' : ''}`
+                }
+              >
+                Sign in
+              </NavLink>
                 <div className="relative">
                   <div className="inline-flex items-center overflow-hidden">
                     <button onClick={() => setIsOpen(!isOpen)}>
-                      <img src={user.image} className="h-14 w-15 rounded-full border-2 border-gray-300" alt="User Avatar" />
+                      {/* <img src="" className="h-14 w-15 rounded-full border-2 border-gray-300" alt="user_avatar" /> */}
                     </button>
                   </div>
                   {isOpen && (
@@ -88,7 +85,6 @@ export default function Navigation({ user }) {
                           className="block rounded-lg px-4 py-2 text-md font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-700 overflow-hidden overflow-wrap break-words"
                           role="menuitem"
                         >
-                          {user.email}
                         </div>
                       </div>
                       <div className="p-2">
@@ -102,9 +98,7 @@ export default function Navigation({ user }) {
                       </div>
                     </div>
                   )}
-                </div>
-              </>
-            )}
+           </div>
         </div>
       </div>
     </header>

@@ -238,6 +238,14 @@ app.get("/api/user", (req, res)=>{
     res.status(401).json({ message: 'Unauthorized' });
   }
 })
+app.get("/auth/check-session", (req, res) => {
+  if (req.isAuthenticated()) {
+    return res.json({ loggedIn: true, user: req.user });
+  } else {
+    return res.json({ loggedIn: false });
+  }
+});
+
 
 app.get("/signout",(req,res,next)=>{
   req.logout(function(err){

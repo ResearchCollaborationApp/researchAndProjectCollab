@@ -3,10 +3,11 @@ import Navigation from "../home/homeNavigation";
 import { useState, useEffect } from "react";
 
 export default function CreateProfile() {
-    const user = useLoaderData();
+
   return (
     <div>
-    <Navigation user ={user}/>
+        <h1>This is a protected route</h1>
+    {/* <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
@@ -43,7 +44,7 @@ export default function CreateProfile() {
                 <span className="ml-2 text-sm text-gray-600"> Your data is complely secured with us. We don’t share with anyone. </span>
             </div>
         </div>
-    </section>
+    </section> */}
     </div>
   )
 }
