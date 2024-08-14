@@ -18,7 +18,8 @@ export default function FeedPageLayout() {
 
   return (
     <>
-    <div>This is a protected route</div>
+    <h1>This is a protected route</h1>
+    <p>Also the feed page</p>
     <main>
         <Outlet/>
       </main>

@@ -7,6 +7,7 @@ export default function CreateProfile() {
   return (
     <div>
         <h1>This is a protected route</h1>
+        <p>Also create profile page</p>
     {/* <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
