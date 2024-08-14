@@ -1,14 +1,13 @@
-import { Link, useLoaderData} from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom";
 import Navigation from "../home/homeNavigation";
 import { useState, useEffect } from "react";
 
 export default function CreateProfile() {
-
   return (
     <div>
-        <h1>This is a protected route</h1>
-        <p>Also create profile page</p>
-    {/* <Navigation user ={user}/>
+      <h1>This is a protected route</h1>
+      <p>Also create profile page</p>
+      {/* <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
@@ -47,5 +46,5 @@ export default function CreateProfile() {
         </div>
     </section> */}
     </div>
-  )
+  );
 }
