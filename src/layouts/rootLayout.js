@@ -4,11 +4,10 @@ import Footer from '../Components/footer/footer'
 export default function RootLayout() {
   return (
     <div>
-      <Navigation/>
+    <Navigation/>
      <main>
         <Outlet/>
       </main>
     </div>
-  
   )
 }

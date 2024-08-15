@@ -6,6 +6,7 @@ import {
   Route,
   createRoutesFromElements,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 //loaders
 import { userLoader } from "./Components/apiLoaders/apiLoaders";
@@ -32,14 +33,14 @@ const router = createBrowserRouter(
 
         {/* These are protected routes*/}
         <Route element={<ProtectedRoutes />}>
-          <Route path="createprofile" element={<CreateProfileLayout />}>
-            <Route index element={<CreateProfile />} />
-            <Route path="profileinformation" element={<FormTemplate />} />
+          <Route path = "/signin" element = {<Navigate to = "/"/>}/>
+          <Route path = "/" element = {<Navigate to = "/feedpage"/>}/>
+          <Route path="createprofile" element={<CreateProfile/>}/>
+          <Route path="profileinformation" element={<FormTemplate />} />
+          <Route path="feedpage" element={<FeedPageLayout />}>
+            <Route index element={<FeedPage />} />
+            <Route path="topresearchpage" element={<TopResearchPage />} />
           </Route>
-        </Route>
-        <Route path="feedpage" element={<FeedPageLayout />}>
-          <Route element={<FeedPage />} />
-          <Route path="topresearchpage" element={<TopResearchPage />} />
         </Route>
       </Route>
     </>

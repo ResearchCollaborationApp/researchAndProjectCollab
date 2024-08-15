@@ -1,6 +1,5 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useEffect, createContext, useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { authorizeUser } from "./authorization";
 
 // UserContext to pass throught all the routes that are inside protected route
 export const UserContext = createContext(null);
@@ -10,17 +9,16 @@ function ProtectedRoutes() {
   useEffect(() => {
     const checkAuthorization = async () => {
       try {
-        const data = await authorizeUser(); // Wait for authorizeUser to resolve
+        const response = await fetch("/auth/check-session", {
+          method: "GET",
+          credentials: "include", // Include cookies in the request
+        });
+        const data = await response.json();
         if (data.loggedIn) {
           setUser(data.user); // Store user data here
-          console.log("Proceed to dashboard");
-        } else {
-          setUser(false);
-          console.log("Redirect to sign-in page");
-        }
+        } 
       } catch (error) {
         console.error("Error checking authorization", error);
-        setUser(false); // Handle error
       }
     };
 

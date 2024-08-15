@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_logo from '../../images/app_logo.jpeg';
+import { UserContext } from '../authpages/protectedRoutes';
 
-export default function Navigation({ user }) {
+export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +15,7 @@ export default function Navigation({ user }) {
     console.log("signout clicked");
     window.open("http://localhost:4000/signout");
   };
-
+  const user = useContext(UserContext);
   return (
     <header className="bg-slate-300 sticky top-0 z-10 mb-3">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
