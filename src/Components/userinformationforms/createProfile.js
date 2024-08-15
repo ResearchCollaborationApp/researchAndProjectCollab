@@ -1,11 +1,13 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navigation from "../home/homeNavigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../authpages/protectedRoutes";
 
 export default function CreateProfile() {
+    const user = useContext(UserContext)
   return (
     <div>
-      <h1>This is a protected route</h1>
+      <h1>You are logged in as {user.displayName}</h1>
       <p>Also create profile page</p>
       {/* <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">

@@ -1,37 +1,45 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { authorizeUser } from "./authorization";
 
+// UserContext to pass throught all the routes that are inside protected route
+export const UserContext = createContext(null);
+
 function ProtectedRoutes() {
-  const [userIsLoggedIn, setUserIsLoggedIn] = useState(null); // Initialize with null to represent loading
+  const [user, setUser] = useState(null); // Initialize with null to represent loading
 
   useEffect(() => {
     const checkAuthorization = async () => {
       try {
         const data = await authorizeUser(); // Wait for authorizeUser to resolve
         if (data.loggedIn) {
-          setUserIsLoggedIn(true);
+          setUser(data.user); // Store user data here
           console.log("Proceed to dashboard");
         } else {
-          setUserIsLoggedIn(false);
+          setUser(false);
           console.log("Redirect to sign-in page");
         }
       } catch (error) {
         console.error("Error checking authorization", error);
-        setUserIsLoggedIn(false); // You might want to redirect to sign-in or handle the error differently
+        setUser(false); // Handle error
       }
     };
 
     checkAuthorization();
   }, []);
 
-  if (userIsLoggedIn === null) {
+  if (user === null) {
     return <div>Loading...</div>; // You can replace this with a loading spinner or any indicator
   }
 
-  return (
-    <div>{userIsLoggedIn ? <Outlet /> : <Navigate to="signin" />}</div>
+  return user ? (
+    <UserContext.Provider value={user}>
+      <Outlet />
+    </UserContext.Provider>
+  ) : (
+    <Navigate to="/signin" /> // Redirect to sign-in page if not logged in
   );
 }
 
 export default ProtectedRoutes;
+
