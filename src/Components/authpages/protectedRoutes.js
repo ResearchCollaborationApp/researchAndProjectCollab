@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { authorizeUser } from "./authorization";
 
@@ -6,8 +6,7 @@ import { authorizeUser } from "./authorization";
 export const UserContext = createContext(null);
 
 function ProtectedRoutes() {
-  const [user, setUser] = useState(null); // Initialize with null to represent loading
-
+  const { user, setUser } = useContext(UserContext);
   useEffect(() => {
     const checkAuthorization = async () => {
       try {
@@ -29,13 +28,11 @@ function ProtectedRoutes() {
   }, []);
 
   if (user === null) {
-    return <div>Loading...</div>; // You can replace this with a loading spinner or any indicator
+    return <div>Loading...</div>; //Replace this later with a loading spinner
   }
 
   return user ? (
-    <UserContext.Provider value={user}>
       <Outlet />
-    </UserContext.Provider>
   ) : (
     <Navigate to="/signin" /> // Redirect to sign-in page if not logged in
   );

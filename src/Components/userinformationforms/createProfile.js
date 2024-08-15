@@ -4,12 +4,9 @@ import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../authpages/protectedRoutes";
 
 export default function CreateProfile() {
-    const user = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
   return (
     <div>
-      <h1>You are logged in as {user.displayName}</h1>
-      <p>Also create profile page</p>
-      {/* <Navigation user ={user}/>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
@@ -46,7 +43,7 @@ export default function CreateProfile() {
                 <span className="ml-2 text-sm text-gray-600"> Your data is complely secured with us. We don’t share with anyone. </span>
             </div>
         </div>
-    </section> */}
+    </section> 
     </div>
   );
 }

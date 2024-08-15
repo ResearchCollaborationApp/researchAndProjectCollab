@@ -1,4 +1,6 @@
 import "./App.css";
+import { useState } from "react";
+import { UserContext } from "./Components/authpages/protectedRoutes";
 import {
   createBrowserRouter,
   Route,
@@ -44,9 +46,12 @@ const router = createBrowserRouter(
   )
 );
 function App() {
+  const [user, setUser] = useState(null)
   return (
     <>
+    <UserContext.Provider value={{ user, setUser }}>
       <RouterProvider router={router} />
+    </UserContext.Provider>
     </>
   );
 }
