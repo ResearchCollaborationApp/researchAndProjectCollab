@@ -15,6 +15,7 @@ function ProtectedRoutes() {
         });
         const data = await response.json();
         if (data.loggedIn) {
+          console.log("user is logged in")
           setUser(data.user); // Store user data here
         } 
       } catch (error) {
@@ -25,14 +26,10 @@ function ProtectedRoutes() {
     checkAuthorization();
   }, []);
 
-  if (user === null) {
-    return <div>Loading...</div>; //Replace this later with a loading spinner
-  }
-
   return user ? (
       <Outlet />
   ) : (
-    <Navigate to="/signin" /> // Redirect to sign-in page if not logged in
+    <Navigate to="signin" /> // Redirect to sign-in page if not logged in
   );
 }
 
