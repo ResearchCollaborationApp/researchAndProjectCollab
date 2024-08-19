@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
-import Navigation from './homeNavigation';
 export default function Home() {
   const sections = [
     {

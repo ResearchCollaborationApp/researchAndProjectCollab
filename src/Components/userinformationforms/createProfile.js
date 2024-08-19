@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {  useContext } from "react";
-import { UserContext } from "../authpages/protectedRoutes";
+import { UserContext } from "../../App";
 
 export default function CreateProfile() {
     const {user, setUser} = useContext(UserContext)
