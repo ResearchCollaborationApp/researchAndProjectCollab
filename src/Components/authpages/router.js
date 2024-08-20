@@ -1,8 +1,9 @@
+import { RouterProvider } from "react-router-dom";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 
 //pages
@@ -16,28 +17,45 @@ import FeedPageLayout from "../../layouts/feedPageLayout";
 import TopResearchPage from "../navPages/topResearchPage"
 
 
-export const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-        <Route index element = {<Home/>}/>
-        <Route 
-            path="signin" 
-            element={<SigninPage />} 
+import React, { useContext } from 'react'
+import { UserContext } from "./contexts";
+
+function Routers() {
+  const user = useContext(UserContext);
+  return (
+    <RouterProvider
+          router={createBrowserRouter(
+            createRoutesFromElements(
+              <Route path="/" element={<RootLayout />}>
+                {/* Public Routes */}
+                <Route
+                  index
+                  element={user ? <Navigate to="feedpage" /> : <Home />}
+                />
+                <Route
+                  path="signin"
+                  element={user ? <Navigate to="feedpage" /> : <SigninPage />}
+                />
+
+                {/* Protected Routes */}
+                <Route element={<ProtectedRoutes />}>
+                  <Route
+                    path="createprofile"
+                    element={<CreateProfile />}
+                  />
+                  <Route path="feedpage" element={<FeedPageLayout />}>
+                    <Route index element={<FeedPage />} />
+                    <Route
+                      path="topresearch"
+                      element={<TopResearchPage />}
+                    />
+                  </Route>
+                </Route>
+              </Route>
+            )
+          )}
         />
-        {/* keep all the protected routes inside this route */}
-        <Route element={<ProtectedRoutes />}>
-          {/*Once the user is logged in they should not be able
-          to go back to the sign in or home page from the protected 
-          pages  */}
-            <Route 
-                path="createprofile" 
-                element={<CreateProfile />} 
-            />
-            <Route path = "feedPage" element = {<FeedPageLayout />}>
-                <Route index element = {<FeedPage/>}/>
-                <Route path = "topresearch" element = {<TopResearchPage/>}/>
-            </Route>
-        </Route>
-    </Route>
   )
-);
+}
+
+export default Routers

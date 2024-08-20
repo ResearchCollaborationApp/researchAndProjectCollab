@@ -1,19 +1,18 @@
 import "./App.css";
-import { useState, createContext } from "react";
-import { router } from "./Components/authpages/router";
-import {
-  RouterProvider,
-} from "react-router-dom";
+import { useState } from "react";
+
 
 import { UserContext } from "./Components/authpages/contexts";
+import Routers from "./Components/authpages/router"
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
   return (
     <>
-    <UserContext.Provider value={{ user, setUser }}>
-      <RouterProvider router = {router}/>
-    </UserContext.Provider>
+      <UserContext.Provider value={{ user, setUser }}>
+        <Routers/>
+      </UserContext.Provider>
     </>
   );
 }
+
 export default App;
