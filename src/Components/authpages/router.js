@@ -30,11 +30,11 @@ function Routers() {
                 {/* Public Routes */}
                 <Route
                   index
-                  element={user ? <Navigate to="feedpage" /> : <Home />}
+                  element={<Home/>}
                 />
                 <Route
                   path="signin"
-                  element={user ? <Navigate to="feedpage" /> : <SigninPage />}
+                  element={<SigninPage />}
                 />
 
                 {/* Protected Routes */}
