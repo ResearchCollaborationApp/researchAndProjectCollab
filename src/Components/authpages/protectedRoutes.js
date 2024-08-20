@@ -1,11 +1,10 @@
-import { useEffect,useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import UserContext from "../../App"
-// UserContext to pass throught all the routes that are inside protected route
+import { UserContext } from "./contexts";
 
 function ProtectedRoutes() {
-  console.log(UserContext);
   const { user, setUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(true); // Local loading state
 
   useEffect(() => {
     const checkAuthorization = async () => {
@@ -16,25 +15,31 @@ function ProtectedRoutes() {
         });
         const data = await response.json();
         if (data.loggedIn) {
-          console.log("user is logged in")
-          console.log(data.user)
           setUser(data.user); 
-          console.log(user)
-        } 
+        }
       } catch (error) {
         console.error("Error checking authorization", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of outcome
       }
     };
 
     checkAuthorization();
   }, []);
-  console.log(user);
+
+  // Show a loading indicator or nothing while checking authorization
+  if (loading) {
+    return <div>Loading...</div>; //  replace this with a spinner or any loading component
+  }
+
+  // If user is set, render the protected routes, otherwise redirect to sign-in
   return user ? (
-      <Outlet />
+    <Outlet />
   ) : (
     <Navigate to="signin" /> // Redirect to sign-in page if not logged in
   );
 }
 
 export default ProtectedRoutes;
+
 

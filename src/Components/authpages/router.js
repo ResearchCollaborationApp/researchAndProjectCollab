@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  Navigate
 } from "react-router-dom";
 
 //pages
@@ -13,6 +14,8 @@ import CreateProfile from "../userInformationForms/createProfile";
 import FeedPage from "../feedpage/feedPage";
 import FeedPageLayout from "../../layouts/feedPageLayout";
 import TopResearchPage from "../navPages/topResearchPage"
+
+
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -23,6 +26,9 @@ export const router = createBrowserRouter(
         />
         {/* keep all the protected routes inside this route */}
         <Route element={<ProtectedRoutes />}>
+          {/*Once the user is logged in they should not be able
+          to go back to the sign in or home page from the protected 
+          pages  */}
             <Route 
                 path="createprofile" 
                 element={<CreateProfile />} 

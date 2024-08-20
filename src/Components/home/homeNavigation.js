@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_logo from '../../images/app_logo.jpeg';
-import { UserContext } from '../../App';
+import { UserContext } from "../authpages/contexts";
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);

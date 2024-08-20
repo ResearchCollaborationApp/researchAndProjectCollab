@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {  useContext } from "react";
-import { UserContext } from "../../App";
+import { UserContext } from "../authpages/contexts";
 
 export default function CreateProfile() {
     const {user, setUser} = useContext(UserContext)

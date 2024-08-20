@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-export const UserContext = createContext(null);
+import { UserContext } from "./Components/authpages/contexts";
 function App() {
   const [user, setUser] = useState(null)
   return (
