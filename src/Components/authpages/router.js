@@ -1,4 +1,3 @@
-import { RouterProvider } from "react-router-dom";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,54 +7,32 @@ import {
 
 //pages
 import Home from "../home/home";
-import RootLayout from "../../layouts/rootLayout"
+import RootLayout from "../../layouts/rootLayout";
 import SigninPage from "./SigninPage";
 import ProtectedRoutes from "./protectedRoutes";
 import CreateProfile from "../userInformationForms/createProfile";
 import FeedPage from "../feedpage/feedPage";
 import FeedPageLayout from "../../layouts/feedPageLayout";
-import TopResearchPage from "../navPages/topResearchPage"
+import TopResearchPage from "../navPages/topResearchPage";
 
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      {/* Public Routes */}
 
-import React, { useContext } from 'react'
-import { UserContext } from "./contexts";
+      <Route index element={<Home />} />
+      <Route path="signin" element={<SigninPage />} />
 
-function Routers() {
-  const user = useContext(UserContext);
-  return (
-    <RouterProvider
-          router={createBrowserRouter(
-            createRoutesFromElements(
-              <Route path="/" element={<RootLayout />}>
-                {/* Public Routes */}
-                <Route
-                  index
-                  element={<Home/>}
-                />
-                <Route
-                  path="signin"
-                  element={<SigninPage />}
-                />
-
-                {/* Protected Routes */}
-                <Route element={<ProtectedRoutes />}>
-                  <Route
-                    path="createprofile"
-                    element={<CreateProfile />}
-                  />
-                  <Route path="feedpage" element={<FeedPageLayout />}>
-                    <Route index element={<FeedPage />} />
-                    <Route
-                      path="topresearch"
-                      element={<TopResearchPage />}
-                    />
-                  </Route>
-                </Route>
-              </Route>
-            )
-          )}
-        />
+      {/* Protected Routes */}
+      <Route element={<ProtectedRoutes />}>
+        <Route path="signin" element={<Navigate to="/" />} />
+        <Route path="/" element={<Navigate to="feedpage" />} />
+        <Route path="createprofile" element={<CreateProfile />} />
+        <Route path="feedpage" element={<FeedPageLayout />}>
+          <Route index element={<FeedPage />} />
+          <Route path="topresearch" element={<TopResearchPage />} />
+        </Route>
+      </Route>
+    </Route>
   )
-}
-
-export default Routers
+);

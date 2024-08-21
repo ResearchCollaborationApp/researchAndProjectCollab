@@ -1,9 +1,9 @@
 import { useEffect, useContext, useState } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useOutletContext } from "react-router-dom";
 import { UserContext } from "./contexts";
 
 function ProtectedRoutes() {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useOutletContext(UserContext)
   const [loading, setLoading] = useState(true); // Local loading state
 
   useEffect(() => {
