@@ -1,9 +1,10 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Outlet, useOutletContext } from "react-router-dom";
-import { UserContext } from "./contexts";
 
 function ProtectedRoutes() {
-  const { user, setUser } = useOutletContext(UserContext)
+  const context = useOutletContext()
+  console.log(context)
+  const user = context.user;
   const [loading, setLoading] = useState(true); // Local loading state
 
   useEffect(() => {
@@ -15,7 +16,8 @@ function ProtectedRoutes() {
         });
         const data = await response.json();
         if (data.loggedIn) {
-          setUser(data.user); 
+          context.setUser(data.user); 
+          console.log(user)
         }
       } catch (error) {
         console.error("Error checking authorization", error);

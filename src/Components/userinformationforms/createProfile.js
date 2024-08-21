@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
-import {  useContext } from "react";
-import { UserContext } from "../authpages/contexts";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function CreateProfile() {
-    const {user, setUser} = useContext(UserContext)
+    const context = useOutletContext();
+    console.log(context);
   return (
     <div>
     <section className="py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-2xl mx-auto text-center">
-                <h2 className="text-2xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl">Hi, {user.displayName.split(' ')[0]} welcome to getResearch!</h2>
+                <h2 className="text-2xl font-bold leading-tight text-black sm:text-4xl lg:text-3xl">Hi, {context.user.displayName.split(' ')[0]} welcome to getResearch!</h2>
                 <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed">
                 You've taken a great step towards your career growth. Dive into discussions with professors and fellow students, explore cutting-edge research, and contribute to our vibrant academic community. Let's innovate together!</p>
             </div>
@@ -26,7 +25,7 @@ export default function CreateProfile() {
                     </Link>
                     <Link  
                         to="/feedpage" // This will automatically resolve to the correct path
-                        state={user}
+                        state={context.user}
                         className="inline-flex items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:ml-4 sm:mt-0 sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
                         Skip for now
                         <svg className="w-5 h-5 ml-3 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
