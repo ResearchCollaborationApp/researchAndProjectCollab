@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useOutletContext } from 'react-router-dom';
 import app_logo from '../../images/app_logo.jpeg';
-import { UserContext } from "../authpages/contexts";
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,11 +10,23 @@ export default function Navigation() {
     setMenuOpen(!menuOpen);
   };
 
-  const signOut = () => {
+  const signOut = async () => {
     console.log("signout clicked");
-    window.open("http://localhost:4000/signout");
+  
+    try {
+      // Send a GET request to the signout endpoint
+      const response = await fetch("/signout", {
+        method: "GET",
+        credentials: "include", // Include cookies for session management
+      });
+       if(response){
+        console.log("user is signed out")
+       }
+    } catch (error) {
+      console.error("Error during sign-out:", error);
+    }
   };
-  const user = useContext(UserContext);
+  
   return (
     <header className="bg-slate-300 sticky top-0 z-10 mb-3">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -25,6 +36,11 @@ export default function Navigation() {
               <span className="sr-only">Home</span>
               <img className="rounded max-h-12 w-auto lg:max-h-14" src={app_logo} alt="app-logo" />
             </NavLink>
+               <button
+               onClick={signOut}
+               >
+               Sign out
+               </button>
                 <button
                   type="button"
                   className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"

@@ -2,7 +2,6 @@ import { Link, useOutletContext } from "react-router-dom";
 
 export default function CreateProfile() {
     const context = useOutletContext();
-    console.log(context);
   return (
     <div>
     <section className="py-10 sm:py-16 lg:py-24">

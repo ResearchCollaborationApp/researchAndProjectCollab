@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Outlet, useOutletContext } from "react-router-dom";
 
 function ProtectedRoutes() {
-  const context = useOutletContext()
-  console.log(context)
+  const context = useOutletContext();
   const user = context.user;
   const [loading, setLoading] = useState(true); // Local loading state
 
@@ -16,8 +15,7 @@ function ProtectedRoutes() {
         });
         const data = await response.json();
         if (data.loggedIn) {
-          context.setUser(data.user); 
-          console.log(user)
+          context.setUser(data.user);
         }
       } catch (error) {
         console.error("Error checking authorization", error);
@@ -36,12 +34,10 @@ function ProtectedRoutes() {
 
   // If user is set, render the protected routes, otherwise redirect to sign-in
   return user ? (
-    <Outlet />
+    <Outlet context = {context} />
   ) : (
     <Navigate to="signin" /> // Redirect to sign-in page if not logged in
   );
 }
 
 export default ProtectedRoutes;
-
-
