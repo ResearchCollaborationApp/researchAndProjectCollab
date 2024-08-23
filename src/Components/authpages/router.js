@@ -15,26 +15,20 @@ import CreateProfile from "../userInformationForms/createProfile";
 import FeedPage from "../feedpage/feedPage";
 import FeedPageLayout from "../../layouts/feedPageLayout";
 import TopResearchPage from "../navPages/topResearchPage";
-
-// Custom PublicRoute component
-const PublicRoute = ({ element }) => {
-  const user = useOutletContext();
-
-  return user ? <Navigate to="/feedpage" /> : element;
-};
+import PublicRoutes from "./publicRoutes";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      {/* <Route index element = {<Home/>}/>
-      <Route path="signin" element={<SigninPage />}/> */}
-      {/* Public Routes */}
-     <Route index element={<PublicRoute element={<Home />} />} />
-      <Route path="signin" element={<PublicRoute element={<SigninPage />} />} />
-
+      <Route element = {<PublicRoutes/>}>
+        <Route element={<Home/> }/>
+        <Route path="signin" element={<SigninPage/>}/>
+      </Route>
+  
       {/* Protected Routes */}
     <Route element={<ProtectedRoutes />}>
-        <Route path="/" element={<Navigate to="feedpage" />} />
+        <Route path="/" element={<Navigate to="feedpage"/>} />
+        <Route path="signin" element={<Navigate to="feedpage" />} />
         <Route path="createprofile" element={<CreateProfile />} />
         <Route path="feedpage" element={<FeedPageLayout />}>
           <Route index element={<FeedPage />} />

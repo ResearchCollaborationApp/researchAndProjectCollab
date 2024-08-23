@@ -246,11 +246,10 @@ app.get("/auth/check-session", (req, res) => {
   }
 });
 
-
 app.get("/signout",(req,res,next)=>{
   req.logout(function(err){
+      console.log("signout clicked")
       if(err){return next(err)}
-      console.log(req.session)
       res.redirect("http://localhost:3000");
   })
 })
