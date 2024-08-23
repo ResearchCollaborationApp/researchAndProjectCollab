@@ -2,6 +2,7 @@ import { Navigate, Outlet, useOutletContext } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function ProtectedRoutes() {
+  {console.log("you visited private routes")}
   const context = useOutletContext();
   const user = context.user;
   const [loading, setLoading] = useState(true); // Local loading state
@@ -33,7 +34,7 @@ function ProtectedRoutes() {
   return user ? (
     <Outlet context = {context} />
   ) : (
-    <Navigate to="signin" /> // Redirect to sign-in page if not logged in
+    <Navigate to="signin" replace /> // Redirect to sign-in page if not logged in
   );
 }
 
