@@ -23,7 +23,7 @@ export const router = createBrowserRouter(
         <Route path="/" element={<Home />} />
         <Route path="signin" element={<SigninPage />} />
       </Route>
-  
+
       {/* Protected Routes */}
       <Route element={<ProtectedRoutes />}>
         <Route path="createprofile" element={<CreateProfile />} />
@@ -31,8 +31,7 @@ export const router = createBrowserRouter(
           <Route index element={<FeedPage />} />
           <Route path="topresearchpage" element={<TopResearchPage />} />
         </Route>
-      </Route> 
+      </Route>
     </Route>
   )
 );
-
