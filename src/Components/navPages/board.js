@@ -1,21 +1,11 @@
-function Board() {
-  const boardElements = [
-    {
-      name: "E-commerce Website Project",
-      creator: "John Doe",
-      description: "Some description about the board and goals.",
-      createdOn: "31st June, 2021",
-      numberOfMembers: 6,
-      progressPercent: 43
-    }
-  ];
-
+function Board(props) {
+  const boardElements = props.boards;
   return (
     <>
       {boardElements.map((board, index) => (
         <div
           key={index}
-          className="block overflow-hidden bg-white rounded-lg border border-indigo-500 p-4 sm:p-6 lg:p-8"
+          className="block overflow-hidden bg-white rounded-lg border border-indigo-500 m-3 p-4 sm:p-6 lg:p-8"
         >
           <div className="sm:flex sm:justify-between sm:gap-4">
             <div>

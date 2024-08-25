@@ -90,7 +90,7 @@ export default function Navigation(props) {
               Home{" "}
             </NavLink>
             <NavLink
-              to="/my-collabs"
+              to="mycollabs"
               className="text-lg font-semibold text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
             >
               {" "}

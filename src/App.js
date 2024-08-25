@@ -6,8 +6,8 @@ import Board from "./Components/navPages/board";
 function App() {
   return (
     <>
-      {/* <RouterProvider router={router} /> */}
-      <MyCollabs />
+      <RouterProvider router={router} />
+      {/* <MyCollabs /> */}
     </>
   );
 }

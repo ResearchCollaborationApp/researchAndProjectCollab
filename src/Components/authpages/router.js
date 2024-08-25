@@ -1,9 +1,11 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Route,
+  Route
 } from "react-router-dom";
 
+//loaders
+import { boardsLoader } from "../apiLoaders/apiLoaders";
 // pages
 import Home from "../home/home";
 import RootLayout from "../../layouts/rootLayout";
@@ -14,6 +16,7 @@ import FeedPage from "../feedpage/feedPage";
 import FeedPageLayout from "../../layouts/feedPageLayout";
 import TopResearchPage from "../navPages/topResearchPage";
 import PublicRoutes from "./publicRoutes";
+import MyCollabs from "../navPages/myCollabs";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +30,7 @@ export const router = createBrowserRouter(
       {/* Protected Routes */}
       <Route element={<ProtectedRoutes />}>
         <Route path="createprofile" element={<CreateProfile />} />
+        <Route path="mycollabs" element={<MyCollabs/>} loader={boardsLoader} />
         <Route path="feedpage" element={<FeedPageLayout />}>
           <Route index element={<FeedPage />} />
           <Route path="topresearchpage" element={<TopResearchPage />} />

@@ -253,3 +253,10 @@ app.get("/signout",(req,res,next)=>{
       res.redirect("http://localhost:3000");
   })
 })
+
+//get the collab boards list from the backend
+app.get("/api/boards", async(req, res)=>{
+  const collection = getCollection("boards", "boards");
+  const boards = await collection.find({}).toArray();
+  res.json(boards);
+})

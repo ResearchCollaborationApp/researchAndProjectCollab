@@ -28,3 +28,18 @@ export const nobelLoader = async () =>{
   }
 }
 
+export const boardsLoader = async () =>{
+  try {
+    const response = await fetch("/api/boards");
+    if (response.ok) {
+      const boardData = await response.json();
+      return boardData;
+    } else {
+      console.error('Failed to fetch board data');
+    }
+  } catch (error) {
+    console.error('Error fetching board data:', error);
+  }
+}
+
+
