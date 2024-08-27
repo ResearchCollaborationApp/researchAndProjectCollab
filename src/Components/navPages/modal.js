@@ -1,8 +1,7 @@
-export default function Modal({ open, onClose, children }) {
+export default function Modal({ open, children }) {
   return (
     // backdrop
     <div
-      onClick={onClose}
       className={`
         fixed inset-0 flex justify-center items-center transition-colors
         ${open ? "visible z-10 bg-black/50" : "invisible"}

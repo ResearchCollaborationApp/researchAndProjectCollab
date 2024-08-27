@@ -5,7 +5,7 @@ function Board(props) {
       {boardElements.map((board, index) => (
         <div
           key={index}
-          className="block overflow-hidden bg-white rounded-lg border border-indigo-500 m-3 p-4 sm:p-6 lg:p-8"
+          className="block overflow-hidden bg-white rounded-lg border shadow-indigo-200 shadow-md m-4 mb-5 p-4 sm:p-6 lg:p-8"
         >
           <div className="sm:flex sm:justify-between sm:gap-4">
             <div>

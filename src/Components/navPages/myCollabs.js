@@ -23,8 +23,8 @@ function MyCollabs() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-5">
-      <div className="border rounded-md">
-        <h1 className=" bg-gray-300 px-6 py-4 font-bold text-lg border-b-2 border-indigo-300">
+      <div className="border rounded-md ">
+        <h1 className=" bg-indigo-500 px-6 py-4 font-bold text-lg text-white border-b-2 border-indigo-300">
           Learn below what a collaboration is!
         </h1>
         <section className="py-10 h-screen bg-white overflow-y-auto">
@@ -99,21 +99,10 @@ function MyCollabs() {
         </section>
       </div>
       <div className="h-screen overflow-y-auto  lg:col-span-2 border rounded-md right">
-        <h1 className="bg-gray-300 px-6 mx-auto py-4 font-bold text-lg sticky top-0 border-b-2 border-indigo-300">
+        <h1 className="bg-indigo-500 px-6 mx-auto py-4 font-bold text-lg text-white sticky top-0 border-b-2 border-indigo-300">
           Your collaboration board
         </h1>
-        {boards ? (
-          <Board boards={boards} />
-        ) : (
-          <div className="my-20 flex flex-col items-center justify-center gap-3">
-            <iframe
-              className="size-80"
-              src="https://lottie.host/embed/edd414f7-b501-4106-b7f4-53875271a105/VN9nA7VwET.json"
-            ></iframe>
-            <span>You do not have any collaborations so far!</span>
-          </div>
-        )}
-        <div className="flex justify-center ">
+        <div className="flex justify-end p-3">
           <button
             onClick={() => setOpen(true)}
             className="inline-flex rounded bg-indigo-500 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
@@ -121,7 +110,17 @@ function MyCollabs() {
             Create New Board
           </button>
         </div>
-        <Modal open={open} onClose={() => setOpen(false)}>
+
+        <div className="my-20 flex flex-col items-center justify-center gap-3">
+          <iframe
+            className="size-80"
+            src="https://lottie.host/embed/edd414f7-b501-4106-b7f4-53875271a105/VN9nA7VwET.json"
+          ></iframe>
+          <span>You do not have any collaborations so far!</span>
+        </div>
+
+        {/* <Board boards={boards} /> */}
+        <Modal open={open}>
           <div className="p-4 bg-gray-100 flex items-center justify-center">
             <div className="container max-w-screen-lg mx-auto">
               <div>
@@ -181,7 +180,7 @@ function MyCollabs() {
                         </div>
                         <div className="md:col-span-3">
                           <label for="department">Department</label>
-                          <input
+                          <select
                             className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                             placeholder="This will be a selection"
                             {...register("department", {
@@ -191,7 +190,14 @@ function MyCollabs() {
                               },
                             })}
                             type="text"
-                          />
+                          >
+                            <option value="Engineering">Engineering</option>
+                            <option value="Health and Humann Services">
+                              Health
+                            </option>
+                            <option value="Business">Business</option>
+                            <option value="Law">Law</option>
+                          </select>
                           {errors.department && (
                             <div>{errors.department.message}</div>
                           )}
@@ -199,7 +205,7 @@ function MyCollabs() {
 
                         <div className="md:col-span-2">
                           <label for="majors">Majors</label>
-                          <input
+                          <select
                             className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                             placeholder="This will be a selection"
                             {...register("majors", {
@@ -209,13 +215,21 @@ function MyCollabs() {
                               },
                             })}
                             type="text"
-                          />
+                          >
+                            <option value="Computer Science">
+                              Computer Science
+                            </option>
+                            <option value="Accounting">Accounting</option>
+                            <option value="Business Informatics System">
+                              Business Informatics System
+                            </option>
+                          </select>
                           {errors.majors && <div>{errors.majors.message}</div>}
                         </div>
 
                         <div className="md:col-span-3">
                           <label for="schoolyear">School year</label>
-                          <input
+                          <select
                             className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                             placeholder="This will be a selection"
                             {...register("schoolyear", {
@@ -224,7 +238,12 @@ function MyCollabs() {
                               },
                             })}
                             type="text"
-                          />
+                          >
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                          </select>
                           {errors.schoolyear && (
                             <div>{errors.schoolyear.message}</div>
                           )}
