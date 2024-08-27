@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+import Modal from "./modal";
 import Board from "./board";
 
 function MyCollabs() {
-  const [showCreateForm, setShowCreateForm] = useState(false);
-  const [showButton, setShowButton] = useState(true);
+  const [open, setOpen] = useState(false);
   const boards = useLoaderData();
-
 
   //this is for the form
   const {
@@ -18,8 +17,7 @@ function MyCollabs() {
   } = useForm();
 
   const onSubmit = (data) => {
-    setShowButton(true);
-    setShowCreateForm(false);
+    setOpen(false);
     console.log(data);
   };
 
@@ -104,7 +102,9 @@ function MyCollabs() {
         <h1 className="bg-gray-300 px-6 mx-auto py-4 font-bold text-lg sticky top-0 border-b-2 border-indigo-300">
           Your collaboration board
         </h1>
-        {!boards && !showCreateForm && (
+        {boards ? (
+          <Board boards={boards} />
+        ) : (
           <div className="my-20 flex flex-col items-center justify-center gap-3">
             <iframe
               className="size-80"
@@ -113,24 +113,16 @@ function MyCollabs() {
             <span>You do not have any collaborations so far!</span>
           </div>
         )}
-        {boards && <Board boards={boards} />}
-
-        {showButton && (
-          <div className="flex justify-center ">
-            <button
-              onClick={() => {
-                setShowCreateForm(true);
-                setShowButton(false);
-              }}
-              className="inline-flex rounded bg-indigo-500 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
-            >
-              Create New Board
-            </button>
-          </div>
-        )}
-
-        {showCreateForm && (
-          <div className="min-h-screen p-4 bg-gray-100 flex items-center justify-center">
+        <div className="flex justify-center ">
+          <button
+            onClick={() => setOpen(true)}
+            className="inline-flex rounded bg-indigo-500 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+          >
+            Create New Board
+          </button>
+        </div>
+        <Modal open={open} onClose={() => setOpen(false)}>
+          <div className="p-4 bg-gray-100 flex items-center justify-center">
             <div className="container max-w-screen-lg mx-auto">
               <div>
                 <h2 className="font-semibold text-xl text-gray-600">
@@ -257,10 +249,7 @@ function MyCollabs() {
                         <div className="md:col-span-5 text-right mt-3">
                           <div className="inline-flex items-end gap-5">
                             <button
-                              onClick={() => {
-                                setShowButton(true);
-                                setShowCreateForm(false);
-                              }}
+                              onClick={() => setOpen(false)}
                               className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                             >
                               Cancel
@@ -282,7 +271,7 @@ function MyCollabs() {
               </div>
             </div>
           </div>
-        )}
+        </Modal>
       </div>
     </div>
   );
