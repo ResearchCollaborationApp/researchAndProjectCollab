@@ -24,12 +24,12 @@ function MyCollabs() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-5">
       <div className="border rounded-md ">
-        <h1 className=" bg-indigo-500 px-6 py-4 font-bold text-lg text-white border-b-2 border-indigo-300">
+        <h1 className=" bg-green-300 px-6 py-4 font-semibold text-lg border-b-2">
           Learn below what a collaboration is!
         </h1>
         <section className="py-10 h-screen bg-white overflow-y-auto">
           <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="divide-y-2 divide-indigo-500 ">
+            <div className="divide-y-2 divide-green-400 ">
               <div className="py-9">
                 <p className="text-xl font-semibold text-black">
                   What is a collaboration?
@@ -99,25 +99,28 @@ function MyCollabs() {
         </section>
       </div>
       <div className="h-screen overflow-y-auto  lg:col-span-2 border rounded-md right">
-        <h1 className="bg-indigo-500 px-6 mx-auto py-4 font-bold text-lg text-white sticky top-0 border-b-2 border-indigo-300">
+        <h1 className="bg-green-300 px-6 mx-auto py-4 font-semibold text-lg sticky top-0 border-b-2">
           Your collaboration board
         </h1>
         <div className="flex justify-end p-3">
           <button
             onClick={() => setOpen(true)}
-            className="inline-flex rounded bg-indigo-500 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+            className="inline-flex rounded bg-blue-400 px-8 py-3 text-sm font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
           >
             Create New Board
           </button>
         </div>
-
-        <div className="my-20 flex flex-col items-center justify-center gap-3">
-          <iframe
-            className="size-80"
-            src="https://lottie.host/embed/edd414f7-b501-4106-b7f4-53875271a105/VN9nA7VwET.json"
-          ></iframe>
-          <span>You do not have any collaborations so far!</span>
-        </div>
+        {boards.length > 0 ? (
+          <Board boards={boards} />
+        ) : (
+          <div className="my-20 flex flex-col items-center justify-center gap-3">
+            <iframe
+              className="size-80"
+              src="https://lottie.host/embed/edd414f7-b501-4106-b7f4-53875271a105/VN9nA7VwET.json"
+            ></iframe>
+            <span>You do not have any collaborations so far!</span>
+          </div>
+        )}
 
         {/* <Board boards={boards} /> */}
         <Modal open={open}>
