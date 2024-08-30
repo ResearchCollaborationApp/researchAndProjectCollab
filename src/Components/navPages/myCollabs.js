@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
 import Modal from "./modal";
 import Board from "./board";
+import Footer from "../footer/footer"
 
 function MyCollabs() {
   const [open, setOpen] = useState(false);
@@ -22,84 +23,10 @@ function MyCollabs() {
   };
 
   return (
+    <>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-5">
-      <div className="rounded-md ">
-        <h1 className=" bg-purple-500 px-6 py-4 h-20 font-semibold text-xl text-white ">
-          Learn below what a collaboration is!
-        </h1>
-        <section className="py-10 h-screen bg-white overflow-y-auto">
-          <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="divide-y-2 divide-purple-400 ">
-              <div className="py-9">
-                <p className="text-xl font-semibold text-black">
-                  What is a collaboration?
-                </p>
-                <p className="mt-3 text-base text-gray-600">
-                  {" "}
-                  A collaboration in getResearch is basically a mutual agreement
-                  between two or more students who come up together to work on a
-                  project that might be difficult for a single person to do it
-                  on their own.
-                </p>
-              </div>
-
-              <div className="py-9">
-                <p className="text-xl font-semibold text-black">
-                  How does it help?
-                </p>
-                <p className="mt-3 text-base text-gray-600">
-                  There are many students around campus who are either working
-                  on their personal or group projects. While developing
-                  something they might need help from a different person. So
-                  once you create a collaboration board you basically say others
-                  that you are open to collaborate or are eagerly looking for
-                  people who have similar interests and are open to collaborate.
-                </p>
-              </div>
-
-              <div className="py-9">
-                <p className="text-xl font-semibold text-black">
-                  How do I create a collaboration?
-                </p>
-                <p className="mt-3 text-base text-gray-600">
-                  In the right under the "your collaboration board" you will see
-                  the collaborations that you have been working on. If you do
-                  not have any you have an option to create a collaboration.
-                  Once you click that button you will be able to fill a form
-                  which will create your collaboration board and it will be
-                  public and shared as a notification to all the people that
-                  have the similar skills and major that you targeted.
-                </p>
-              </div>
-
-              <div className="py-9">
-                <p className="text-xl font-semibold text-black">
-                  What after collaboration?
-                </p>
-                <p className="mt-3 text-base text-gray-600">
-                  After you create a collaboration board, you and your team
-                  members will be able to post the progress of your work and you
-                  will have a separate online discussion room where you can
-                  discuss about your project and also publish the project as a
-                  post.
-                </p>
-              </div>
-              <div className="py-9">
-                <p className="text-xl font-semibold text-black">
-                  Don't forget to give a shou out to getResearch team?
-                </p>
-                <p className="mt-3 text-base text-gray-600">
-                  You do not have to give any special praise to give a shout out
-                  to getResearch team just create and collaborate on many
-                  projects that you can! Don't forget to Rock-on!
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
       <div className="h-screen overflow-y-auto lg:col-span-2  bg-white">
-        <h1 className="bg-purple-500 px-6 h-20 mx-auto py-4 font-semibold text-xl text-white sticky top-0 ">
+        <h1 className="bg-gradient-to-r from-indigo-300 to-blue-300 px-6 h-16 mx-auto py-4 font-semibold text-xl sticky top-0">
           Your collaboration board
         </h1>
         {boards.length > 0 ? (
@@ -113,10 +40,10 @@ function MyCollabs() {
             <span>You do not have any collaborations so far!</span>
           </div>
         )}
-         <div className="flex justify-center p-3">
+        <div className="flex justify-center p-3">
           <button
             onClick={() => setOpen(true)}
-            className="inline-flex bg-green-500 rounded-2xl px-8 py-3 text-md text-white font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+            className="inline-flex bg-indigo-400 text-white px-8 py-3 text-md font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
           >
             Create New Board
           </button>
@@ -295,7 +222,84 @@ function MyCollabs() {
           </div>
         </Modal>
       </div>
+      <div className="rounded-md ">
+        <h1 className=" bg-gradient-to-r from-indigo-300 to-blue-300 px-6 py-4 h-16 font-semibold text-xl">
+          Learn below what a collaboration is!
+        </h1>
+        <section className="py-10 h-screen bg-white overflow-y-auto">
+          <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
+            <div className="divide-y-2 divide-indigo-300">
+              <div className="py-9">
+                <p className="text-xl font-semibold text-black">
+                  What is a collaboration?
+                </p>
+                <p className="mt-3 text-base text-gray-600">
+                  {" "}
+                  A collaboration in getResearch is basically a mutual agreement
+                  between two or more students who come up together to work on a
+                  project that might be difficult for a single person to do it
+                  on their own.
+                </p>
+              </div>
+
+              <div className="py-9">
+                <p className="text-xl font-semibold text-black">
+                  How does it help?
+                </p>
+                <p className="mt-3 text-base text-gray-600">
+                  There are many students around campus who are either working
+                  on their personal or group projects. While developing
+                  something they might need help from a different person. So
+                  once you create a collaboration board you basically say others
+                  that you are open to collaborate or are eagerly looking for
+                  people who have similar interests and are open to collaborate.
+                </p>
+              </div>
+
+              <div className="py-9">
+                <p className="text-xl font-semibold text-black">
+                  How do I create a collaboration?
+                </p>
+                <p className="mt-3 text-base text-gray-600">
+                  In the right under the "your collaboration board" you will see
+                  the collaborations that you have been working on. If you do
+                  not have any you have an option to create a collaboration.
+                  Once you click that button you will be able to fill a form
+                  which will create your collaboration board and it will be
+                  public and shared as a notification to all the people that
+                  have the similar skills and major that you targeted.
+                </p>
+              </div>
+
+              <div className="py-9">
+                <p className="text-xl font-semibold text-black">
+                  What after collaboration?
+                </p>
+                <p className="mt-3 text-base text-gray-600">
+                  After you create a collaboration board, you and your team
+                  members will be able to post the progress of your work and you
+                  will have a separate online discussion room where you can
+                  discuss about your project and also publish the project as a
+                  post.
+                </p>
+              </div>
+              <div className="py-9">
+                <p className="text-xl font-semibold text-black">
+                  Don't forget to give a shou out to getResearch team?
+                </p>
+                <p className="mt-3 text-base text-gray-600">
+                  You do not have to give any special praise to give a shout out
+                  to getResearch team just create and collaborate on many
+                  projects that you can! Don't forget to Rock-on!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

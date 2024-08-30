@@ -6,7 +6,7 @@ function Board(props) {
       {boardElements.map((board, index) => (
         <div
           key={index}
-          className="block overflow-hidden bg-white rounded-lg border shadow-purple-200 shadow-md m-4 mb-5 p-4 sm:p-6 lg:p-8"
+          className="block overflow-hidden bg-gray-100 rounded-lg border shadow-blue-200 shadow-md m-6 mb-5 p-4 sm:p-6 lg:p-8"
         >
           <div className="sm:flex sm:justify-between sm:gap-4">
             <div>
@@ -22,7 +22,7 @@ function Board(props) {
               <div className="flex flex-col">
                 <Link
                   to="#"
-                  className="bg-purple-500 text-white font-semibold group relative inline-flex items-center overflow-hidden rounded-md border px-8 py-3 focus:outline-none focus:ring"
+                  className="bg-gradient-to-r from-indigo-400 to-blue-400 text-white font-semibold group relative inline-flex items-center overflow-hidden rounded-md border px-8 py-3 focus:outline-none focus:ring"
                 >
                   <span className="absolute mt-4 end-full transition-all group-hover:end-4">
                     <svg
@@ -41,7 +41,7 @@ function Board(props) {
                     </svg>
                   </span>
 
-                  <span class="text-sm font-medium transition-all group-hover:me-4">
+                  <span class="text-base font-semibold transition-all group-hover:me-4">
                     {" "}
                     Discussion Board{" "}
                   </span>
@@ -70,7 +70,7 @@ function Board(props) {
               className="block rounded-full bg-gray-200"
             >
               <span
-                className="block h-3 rounded-full bg-purple-500"
+                className="block h-3 rounded-full bg-indigo-500"
                 style={{ width: `${board.progressPercent}%` }}
               ></span>
             </span>
