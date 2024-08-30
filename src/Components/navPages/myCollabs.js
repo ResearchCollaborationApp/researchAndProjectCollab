@@ -23,13 +23,13 @@ function MyCollabs() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-5">
-      <div className="border rounded-md ">
-        <h1 className=" bg-green-300 px-6 py-4 font-semibold text-lg border-b-2">
+      <div className="rounded-md ">
+        <h1 className=" bg-purple-500 px-6 py-4 h-20 font-semibold text-xl text-white ">
           Learn below what a collaboration is!
         </h1>
         <section className="py-10 h-screen bg-white overflow-y-auto">
           <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-            <div className="divide-y-2 divide-green-400 ">
+            <div className="divide-y-2 divide-purple-400 ">
               <div className="py-9">
                 <p className="text-xl font-semibold text-black">
                   What is a collaboration?
@@ -98,18 +98,10 @@ function MyCollabs() {
           </div>
         </section>
       </div>
-      <div className="h-screen overflow-y-auto  lg:col-span-2 border rounded-md right">
-        <h1 className="bg-green-300 px-6 mx-auto py-4 font-semibold text-lg sticky top-0 border-b-2">
+      <div className="h-screen overflow-y-auto lg:col-span-2  bg-white">
+        <h1 className="bg-purple-500 px-6 h-20 mx-auto py-4 font-semibold text-xl text-white sticky top-0 ">
           Your collaboration board
         </h1>
-        <div className="flex justify-end p-3">
-          <button
-            onClick={() => setOpen(true)}
-            className="inline-flex rounded bg-blue-400 px-8 py-3 text-sm font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
-          >
-            Create New Board
-          </button>
-        </div>
         {boards.length > 0 ? (
           <Board boards={boards} />
         ) : (
@@ -121,6 +113,14 @@ function MyCollabs() {
             <span>You do not have any collaborations so far!</span>
           </div>
         )}
+         <div className="flex justify-center p-3">
+          <button
+            onClick={() => setOpen(true)}
+            className="inline-flex bg-green-500 rounded-2xl px-8 py-3 text-md text-white font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+          >
+            Create New Board
+          </button>
+        </div>
 
         {/* <Board boards={boards} /> */}
         <Modal open={open}>
@@ -278,7 +278,7 @@ function MyCollabs() {
                             </button>
                             <button
                               type="submit"
-                              className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+                              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                             >
                               Submit
                             </button>

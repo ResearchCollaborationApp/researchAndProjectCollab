@@ -35,7 +35,7 @@ const PostCard = ({ data }) => {
       </p>
       <button
         onClick={handleToggle}
-        className="text-indigo-600 ml-2 font-semibold"
+        className="text-purple-500 ml-2 font-semibold"
       >
         {isExpanded ? "see less" : "..see more"}
       </button>

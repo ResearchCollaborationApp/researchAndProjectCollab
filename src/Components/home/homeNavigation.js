@@ -29,8 +29,8 @@ export default function Navigation(props) {
   };
 
   return (
-    <header className="bg-green-300 sticky top-0 z-10 mb-3">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <header className="bg-zinc-200 sticky top-0 z-10 mb-3 border-b-2">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8  ">
         <div className="flex items-center justify-between h-20">
           {/* Logos and Sign In/Sign Out */}
           <NavLink to="/" className="block text-teal-600">
@@ -84,28 +84,28 @@ export default function Navigation(props) {
           >
             <NavLink
               to="/"
-              className="text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+              className="text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
             >
               {" "}
               Home{" "}
             </NavLink>
             <NavLink
               to="mycollabs"
-              className="text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+              className="text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
             >
               {" "}
               My Collabs{" "}
             </NavLink>
             <NavLink
               to="/top-research"
-              className="text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+              className="text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
             >
               {" "}
               Top Research{" "}
             </NavLink>
             <NavLink
               to="/latest-research"
-              className="text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+              className="text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
             >
               {" "}
               Latest Research{" "}
@@ -121,35 +121,35 @@ export default function Navigation(props) {
               <div className="flex flex-col px-6 -my-2 space-y-1">
                 <NavLink
                   to="/"
-                  className="inline-flex py-2 text-lg font-semibold transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+                  className="inline-flex py-2 text-lg font-semibold transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
                 >
                   {" "}
                   Home{" "}
                 </NavLink>
                 <NavLink
                   to="/my-collabs"
-                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
                 >
                   {" "}
                   My Collabs{" "}
                 </NavLink>
                 <NavLink
                   to="/top-research"
-                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
                 >
                   {" "}
                   Top Research{" "}
                 </NavLink>
                 <NavLink
                   to="/latest-research"
-                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
                 >
                   {" "}
                   Latest Research{" "}
                 </NavLink>
                 <NavLink
                   to="/me"
-                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-indigo-500 focus:text-indigo-500"
+                  className="inline-flex py-2 text-lg font-semibold text-black transition-all duration-200 hover:text-blue-500 focus:text-blue-500"
                 >
                   {" "}
                   Me{" "}
