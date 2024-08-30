@@ -1,12 +1,12 @@
 import React from "react";
-import logo from '../../images/app_logo.jpeg'
+import logo from '../../images/app_logo1.png'
 const Footer = () => { 
     return (
-        <footer className="bg-gradient-to-r from-indigo-200 to-blue-200 mt-8">
+        <footer className=" mt-8">
         <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <div>
-              <img src = {logo} className = "w-10 md:w-20 lg:w-30 rounded"  alt = "app-logo"/>
+              <img src = {logo} className = "w-14 md:w-20 lg:w-30 rounded"  alt = "app-logo"/>
             </div>
             <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
               <li>

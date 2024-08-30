@@ -26,7 +26,7 @@ function MyCollabs() {
     <>
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-5">
       <div className="h-screen overflow-y-auto lg:col-span-2  bg-white">
-        <h1 className="bg-gradient-to-r from-indigo-300 to-blue-300 px-6 h-16 mx-auto py-4 font-semibold text-xl sticky top-0">
+        <h1 className="bg-blue-200 px-6 h-16 mx-auto py-4 font-bold text-2xl sticky top-0">
           Your collaboration board
         </h1>
         {boards.length > 0 ? (
@@ -43,7 +43,7 @@ function MyCollabs() {
         <div className="flex justify-center p-3">
           <button
             onClick={() => setOpen(true)}
-            className="inline-flex bg-indigo-400 text-white px-8 py-3 text-md font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+            className="inline-flex bg-blue-200 px-8 py-3 text-md font-semibold transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
           >
             Create New Board
           </button>
@@ -223,7 +223,7 @@ function MyCollabs() {
         </Modal>
       </div>
       <div className="rounded-md ">
-        <h1 className=" bg-gradient-to-r from-indigo-300 to-blue-300 px-6 py-4 h-16 font-semibold text-xl">
+        <h1 className="bg-blue-200 px-6 py-4 h-16 font-bold text-xl">
           Learn below what a collaboration is!
         </h1>
         <section className="py-10 h-screen bg-white overflow-y-auto">

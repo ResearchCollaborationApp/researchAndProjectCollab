@@ -44,7 +44,7 @@ export default function Home() {
                   </p>
                   <Link
                     to="/signin"
-                    className="mt-8 inline-block rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white transition transform duration-500 ease-in-out hover:scale-110"
+                    className="mt-8 inline-block rounded bg-orange-500 px-12 py-3 text-sm font-bold text-white transition transform duration-500 ease-in-out hover:scale-110"
                   >
                     {section.linkText}
                   </Link>

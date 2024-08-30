@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useOutletContext } from "react-router-dom";
-import app_logo from "../../images/app_logo.jpeg";
+import app_logo from "../../images/app_logo1.png";
 
 export default function Navigation(props) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,14 +29,14 @@ export default function Navigation(props) {
   };
 
   return (
-    <header className="bg-gradient-to-r from-indigo-200 to-blue-200 sticky top-0 z-10 mb-3 border-b-2 ">
+    <header className="bg-gradient-to-r from-red-300 to-blue-400  sticky top-0 z-10 mb-3 border-b-2 ">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8  ">
         <div className="flex items-center justify-between h-20">
           {/* Logos and Sign In/Sign Out */}
           <NavLink to="/" className="block text-teal-600">
             <span className="sr-only">Home</span>
             <img
-              className="rounded max-h-12 w-auto lg:max-h-14"
+              className="rounded max-h-20 w-auto lg:max-h-20"
               src={app_logo}
               alt="app-logo"
             />

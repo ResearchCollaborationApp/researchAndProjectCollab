@@ -22,7 +22,7 @@ function Board(props) {
               <div className="flex flex-col">
                 <Link
                   to="#"
-                  className="bg-gradient-to-r from-indigo-400 to-blue-400 text-white font-semibold group relative inline-flex items-center overflow-hidden rounded-md border px-8 py-3 focus:outline-none focus:ring"
+                  className="bg-blue-200 font-semibold group relative inline-flex items-center overflow-hidden border px-8 py-3 focus:outline-none focus:ring"
                 >
                   <span className="absolute mt-4 end-full transition-all group-hover:end-4">
                     <svg
@@ -70,7 +70,7 @@ function Board(props) {
               className="block rounded-full bg-gray-200"
             >
               <span
-                className="block h-3 rounded-full bg-indigo-500"
+                className="block h-3 rounded-full bg-green-400"
                 style={{ width: `${board.progressPercent}%` }}
               ></span>
             </span>
