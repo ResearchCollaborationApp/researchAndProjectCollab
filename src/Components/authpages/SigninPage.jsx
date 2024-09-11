@@ -16,6 +16,7 @@ export default function SigninPage(){
         window.open("http://localhost:4000/auth/microsoft", "_self");
 
       }
+    
       useEffect(() => {
         window.scrollTo(0, 0);
       }, []);

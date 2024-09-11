@@ -45,7 +45,7 @@ function TopResearch({ inResearchPage }) {
   ];
 
   return (
-    <div className="divide-y-2 divide-green-500 h-screen overflow-y-auto">
+    <div className="divide-y-2 divide-blue-500 h-screen overflow-y-auto">
       {researchArray.map((research, index) => (
         <div key={index} className="p-4 bg-white">
           <span className="inline-block rounded bg-blue-600 p-2 text-white">

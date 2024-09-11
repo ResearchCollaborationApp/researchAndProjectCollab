@@ -29,6 +29,7 @@ export const router = createBrowserRouter(
 
       {/* Protected Routes */}
       <Route element={<ProtectedRoutes />}>
+        <Route path = "changepassword" element = {<ChangePassword/>}/>
         <Route path="createprofile" element={<CreateProfile />} />
         <Route path="mycollabs" element={<MyCollabs/>} loader={boardsLoader} />
         <Route path="feedpage" element={<FeedPageLayout />}>

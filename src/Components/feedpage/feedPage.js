@@ -13,7 +13,7 @@ export default function FeedPage() {
       <div className="grid px-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:gap-3 lg:mx-3 lg:px-8">
         <div className="h-fit hidden lg:block md:block lg:col-span-2">
           <div className="max-w-sm  shadow-md">
-            <h1 className=" bg-green-300 px-6 py-4 font-bold text-lg">
+            <h1 className=" bg-white border-b-2 px-6 py-4 font-bold text-lg">
               Top Research in School
             </h1>
             <TopResearch />
@@ -74,7 +74,7 @@ export default function FeedPage() {
           <ScrollingFeed />
         </div>
         <div className="h-fit lg:col-span-2 hidden border-rounded lg:block md:block">
-          <h1 className="bg-green-300 px-6 py-4 font-bold text-lg ">
+          <h1 className="bg-white border-b-2 px-6 py-4 font-bold text-lg ">
             Latest Research
           </h1>
           <AutoScroll />

@@ -22,7 +22,7 @@ function Board(props) {
               <div className="flex flex-col">
                 <Link
                   to="#"
-                  className="bg-blue-200 font-semibold group relative inline-flex items-center overflow-hidden border px-8 py-3 focus:outline-none focus:ring"
+                  className="bg-orange-500 text-white font-semibold group relative inline-flex items-center overflow-hidden border px-8 py-3 focus:outline-none focus:ring"
                 >
                   <span className="absolute mt-4 end-full transition-all group-hover:end-4">
                     <svg
@@ -51,7 +51,7 @@ function Board(props) {
           </div>
 
           <div className="mt-4">
-            <p className="text-pretty text-md text-gray-500 line-clamp-4">
+            <p className="text-pretty text-md text-gray-700 line-clamp-4">
               {board.description}
             </p>
           </div>
