@@ -134,51 +134,6 @@ app.get("/auth/google/callback", (req, res, next) => {
   })(req, res, next);
 });
 
-
-//linkedin authorization
-passport.use(
-  new LinkedInStrategy(
-    {
-      clientID: linkedinClientID,
-      clientSecret: linkedinClientSecret,
-      callbackURL: "http://localhost:4000/auth/linkedin/callback",
-      scope: ['profile', 'email', 'openid'],
-      passReqToCallback: true,
-    },
-    function (req, accessToken, refreshToken, profile, done) {
-      // asynchronous verification, for effect...
-      req.session.accessToken = accessToken;
-      process.nextTick(async function () {
-        try {
-          const userFromMongo = getCollection("users", "linkedinUsers");
-          let user = await userFromMongo.findOne({ linkedinId: profile.id });
-          if (!user) {
-            user = {
-              linkedinId: profile.id,
-              displayName: profile.givenName,
-              email: profile.email,
-              image: profile.picture
-            };
-            await userFromMongo.insertOne(user);
-          }
-          return done(null, user);
-        } catch (error) {
-          return done(error, null);
-        }
-      });
-    }
-  )
-);
-// Initial LinkedIn OAuth login
-app.get("/auth/linkedin", passport.authenticate("linkedin",{ state: 'JFKDODFK' }));
-
-//success redirect should lead the user to dashboard page
-//for now it will take the user to the home page
-app.get("/auth/linkedin/callback", passport.authenticate("linkedin", {
-    successRedirect: "http://localhost:3000/createprofile",
-    failureRedirect: "http://localhost:3000/signin"
-}));
-
 //microsoft authorization
 passport.use(new MicrosoftStrategy({
   clientID: process.env.MICROSOFT_CLIENT_ID,

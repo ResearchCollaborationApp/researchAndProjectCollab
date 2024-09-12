@@ -9,9 +9,7 @@ export default function SigninPage(){
     const signInWithGoogle = ()=>{
         window.open("http://localhost:4000/auth/google", "_self")
     }
-    const signInWithLinkedin = () =>{
-        window.open("http://localhost:4000/auth/linkedin", "_self")
-    }
+    
     const signInWithMicrosoft = () => {
         window.open("http://localhost:4000/auth/microsoft", "_self");
 
@@ -48,20 +46,9 @@ export default function SigninPage(){
                         </div>
                         Sign in with Google
                     </button>
-                    <button
-                        onClick = {signInWithLinkedin}
-                        type="button"
-                        className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
-                    >
-                        <div className="absolute inset-y-0 left-0 p-4">
-                            <FontAwesomeIcon icon={faLinkedin} className="w-full h-full text-blue-600" />
-                        </div>
-                        Sign in with Linkedin
-                    </button>
                 </div>
                 </div>
             </div>
-    
             <div className="flex items-center justify-center px-4 py-10 sm:py-16 lg:py-24 sm:px-6 lg:px-8">
                 <div>
                 <iframe src="https://lottie.host/embed/7737d233-26e0-402e-b10e-2b811ce66d03/dzN0sMiiLT.json" className="w-full h-[600px]"></iframe>
