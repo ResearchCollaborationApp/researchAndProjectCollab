@@ -1,9 +1,19 @@
+// server.js
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require("cors");
 const session = require("express-session");
 const passport = require("passport");
+<<<<<<< HEAD
+
+//routes
+const authRoutes = require('./routes/authRoutes'); // Import auth routes
+const userRoutes =  require('./routes/userRoutes')
+// Create express app
+const app = express();
+
+// Middleware
+=======
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
 const googleClientID = process.env.GOOGLE_CLIENT_ID;
@@ -29,47 +39,28 @@ const getCollection = (dbName, collectionName) => {
   return db.collection(collectionName); // Access the collection
 };
 
+>>>>>>> 136c4aa2098113c9228138db56ea259fea76a6f6
 app.use(cors({
   origin: "http://localhost:3000",
   methods: "GET, POST, PUT, DELETE",
   credentials: true
 }));
-
-// Middleware
 app.use(express.json());
-app.use((req, res, next) => {
-  console.log(req.path, req.method);
-  next();
-});
-app.get("/getResearch/api/skills", async(req, res)=>{
-  const collection = getCollection("skills", "skills");
-  const skills = await collection.find({}).toArray();
-  res.json(skills);
-})
-
-app.get("/api/posts", async (req, res)=>{
-  const offset = parseInt(req.query.offset) || 0;
-  const limit = parseInt(req.query.limit) || 10;
-  const collection = getCollection("posts", "posts")
-  try {
-    const posts = await collection.find().skip(offset).limit(limit).toArray();
-    res.json(posts);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching movies', error });
-  }
-})
-
-// Setup session
 app.use(session({
   secret: process.env.SESSION_KEY,
   resave: false,
   saveUninitialized: true
 }));
 
-// Setup passport
+// Initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
+<<<<<<< HEAD
+// Use auth routes
+app.use('/auth', authRoutes);
+app.use('/user',userRoutes);
+=======
 //google authorization
 
 passport.use(
@@ -100,36 +91,39 @@ passport.use(
     }
   )
 );
+>>>>>>> 136c4aa2098113c9228138db56ea259fea76a6f6
 
-// Initialize Google auth signin
-app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-//success redirect should lead the user to dashboard page
-//for now it will take the user to the home page
-app.get("/auth/google/callback", (req, res, next) => {
-  passport.authenticate("google", (err, user, info) => {
-    if (err) {
-      return next(err);
-    }
-    if (!user) {
-      return res.redirect("http://localhost:3000/signin");
-    }
+// // Get skills and posts (example routes)
+// app.get("/getResearch/api/skills", async (req, res) => {
+//   const collection = getCollection("skills", "skills");
+//   const skills = await collection.find({}).toArray();
+//   res.json(skills);
+// });
 
-    req.logIn(user, (err) => {
-      if (err) {
-        return next(err);
-      }
+// app.get("/api/posts", async (req, res) => {
+//   const offset = parseInt(req.query.offset) || 0;
+//   const limit = parseInt(req.query.limit) || 10;
+//   const collection = getCollection("posts", "posts");
+//   try {
+//     const posts = await collection.find().skip(offset).limit(limit).toArray();
+//     res.json(posts);
+//   } catch (error) {
+//     res.status(500).json({ message: 'Error fetching posts', error });
+//   }
+// });
 
-      // Check if the user is logging in for the first time
-      if (info.firstTimeUser) {
-        console.log("is a first time user")
-        return res.redirect("http://localhost:3000/createprofile");
-      }
-      console.log("is already a member at getResearch")
-      return res.redirect("http://localhost:3000/feedpage");
-    });
-  })(req, res, next);
+// // Example boards route
+// app.get("/api/boards", async (req, res) => {
+//   const collection = getCollection("boards", "boards");
+//   const boards = await collection.find({}).toArray();
+//   res.json(boards);
+// });
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on port ${process.env.PORT}`);
 });
+<<<<<<< HEAD
+=======
 
 //microsoft authorization
 passport.use(new MicrosoftStrategy({
@@ -212,3 +206,4 @@ app.get("/api/boards", async(req, res)=>{
   const boards = await collection.find({}).toArray();
   res.json(boards);
 })
+>>>>>>> 136c4aa2098113c9228138db56ea259fea76a6f6
