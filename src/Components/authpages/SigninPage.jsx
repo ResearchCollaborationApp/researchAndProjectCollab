@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 import React from "react";
 import Footer from "../footer/footer";
-import Navigation from "../home/homeNavigation";
+
 export default function SigninPage(){
     const signInWithGoogle = ()=>{
         window.open("http://localhost:4000/auth/google", "_self")
@@ -13,7 +12,6 @@ export default function SigninPage(){
         window.open("http://localhost:4000/auth/microsoft", "_self");
 
       }
-    
       useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
@@ -48,7 +46,6 @@ export default function SigninPage(){
                 </div>
                 </div>
             </div>
-    
             <div className="flex items-center justify-center px-4 py-10 sm:py-16 lg:py-24 sm:px-6 lg:px-8">
                 <div>
                 <iframe src="https://lottie.host/embed/7737d233-26e0-402e-b10e-2b811ce66d03/dzN0sMiiLT.json" className="w-full h-[600px]"></iframe>
