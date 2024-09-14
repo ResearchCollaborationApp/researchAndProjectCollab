@@ -15,7 +15,7 @@ export default function CreateProfile() {
               <p className="flex flex-col items-center sm:flex-row sm:justify-center mb-5">Create your profile today!</p>
                 <div className="flex flex-col items-center sm:flex-row sm:justify-center">
                     <Link 
-                    to = "/profileinformation" 
+                    to = "/userprofile" 
                     className="inline-flex items-center justify-center w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:ml-4 sm:mt-0 sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
                         Create profile
                         <svg className="w-5 h-5 ml-3 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

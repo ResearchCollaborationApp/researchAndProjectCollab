@@ -5,12 +5,9 @@ const cors = require("cors");
 const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
-const LinkedInStrategy = require("passport-linkedin").Strategy;
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
 const googleClientID = process.env.GOOGLE_CLIENT_ID;
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET;
-const linkedinClientID = process.env.LINKEDIN_CLIENT_ID;
-const linkedinClientSecret = process.env.LINKEDIN_CLIENT_SECRET;
 // Create express app
 const app = express();
 
@@ -31,7 +28,6 @@ const getCollection = (dbName, collectionName) => {
   const db = mongoose.connection.useDb(dbName); // Select the database
   return db.collection(collectionName); // Access the collection
 };
-
 
 app.use(cors({
   origin: "http://localhost:3000",
@@ -75,6 +71,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //google authorization
+
 passport.use(
   new GoogleStrategy({
     clientID: googleClientID,

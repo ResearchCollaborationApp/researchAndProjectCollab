@@ -8,7 +8,7 @@ function ProtectedRoutes() {
   const [loading, setLoading] = useState(true); // Local loading state
   const checkAuthorization = async () => {
     try {
-      const response = await fetch("/auth/check-session", {
+        const response = await fetch("/auth/check-session", {
         method: "GET",
         credentials: "include", // Include cookies in the request
       });

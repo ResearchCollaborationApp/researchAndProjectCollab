@@ -1,10 +1,10 @@
 //userDocument
 user = {
+  userId: "",
   firstName: "firstName",
   lastName: "lastName",
   email: "email",
   imageLink: "",
-  userId: "jwtToken",
   address: "city and address from the user",
   major: "major of study",
   openToCollaboration: true,

@@ -1,20 +1,17 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
 import React from "react";
 import Footer from "../footer/footer";
-import Navigation from "../home/homeNavigation";
+
 export default function SigninPage(){
     const signInWithGoogle = ()=>{
         window.open("http://localhost:4000/auth/google", "_self")
     }
-    
     const signInWithMicrosoft = () => {
         window.open("http://localhost:4000/auth/microsoft", "_self");
 
       }
-    
       useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
