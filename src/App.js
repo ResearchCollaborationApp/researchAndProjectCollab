@@ -7,8 +7,7 @@ import UserProfile from "./Components/profilepage/userprofile";
 function App() {
   return (
     <>
-      {/* <RouterProvider router={router} /> */}
-      <UserProfile/>
+      <RouterProvider router={router} />
     </>
   );
 }
