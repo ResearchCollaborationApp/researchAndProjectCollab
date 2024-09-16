@@ -2,6 +2,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  useOutletContext,
 } from "react-router-dom";
 
 //loaders
@@ -26,6 +27,14 @@ import TopResearchPage from "../navPages/topResearchPage";
 import PublicRoutes from "./publicRoutes";
 import MyCollabs from "../navPages/myCollabs";
 
+// A function to wrap loaders and inject user data from context
+function loaderWithUser(loader) {
+  return (args) => {
+    const { user } = useOutletContext().user; // Access the user context
+    return loader(args, user); // Pass user data to the loader
+  };
+}
+
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -41,12 +50,12 @@ export const router = createBrowserRouter(
         <Route
           path="mycollabs"
           element={<MyCollabs />}
-          loader={collabProjectsLoader}
+          loader={loaderWithUser(collabProjectsLoader)}
         />
         <Route
           path="userprofile"
           element={<UserProfile />}
-          loader={collabProjectsLoader}
+          loader={loaderWithUser(collabProjectsLoader)}
         />
         <Route path="feedpage" element={<FeedPageLayout />}>
           <Route index element={<FeedPage />} />
