@@ -18,7 +18,7 @@ import Home from "../home/home";
 import RootLayout from "../../layouts/rootLayout";
 import SigninPage from "./SigninPage";
 import ProtectedRoutes from "./protectedRoutes";
-import CreateProfile from "../userInformationForms/createProfile";
+import CreateProfile from "../userinformationforms/createProfile";
 import UserProfile from "../profilepage/userprofile";
 import FeedPage from "../feedpage/feedPage";
 import FeedPageLayout from "../../layouts/feedPageLayout";
