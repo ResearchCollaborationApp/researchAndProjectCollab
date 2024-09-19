@@ -3,11 +3,12 @@ require('dotenv').config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
-const { getCollection } = require('../controllers/getCollections');
-const { signUpAUser } = require('../controllers/signUpAUser');
+//const  getCollection = require('../controllers/getCollections');
+const { signUpAUser} = require('../controllers/signUpAUser');
 
-const {databaseConnector} = require('../middleware/databaseConnector')
-const db = databaseConnector;
+const databasePromise = require('../middleware/databaseConnector')
+
+
 // Google OAuth login handler
 function googleOAuthLoginHandler() {
     return passport.authenticate("google", { scope: ["profile", "email"] });
@@ -28,8 +29,9 @@ passport.use(
   },
   async (accessToken, refreshToken, profile, done) => {
     try {
-      const userFromMongo = getCollection("users", "googleUsers");
-      let user = await userFromMongo.findOne({ googleId: profile.id });
+      const database = await databasePromise;
+      const userCollection = await database.collection('users');
+      let user = await userCollection.findOne({ googleId: profile.id });
       if (!user) {
         user = {
           googleId: profile.id,
@@ -37,7 +39,7 @@ passport.use(
           email: profile.emails[0].value,
           image: profile.photos[0].value
         };
-        await userFromMongo.insertOne(user);
+        await userCollection.insertOne(user);
         return done(null, user, { firstTimeUser: true });
       }
       return done(null, user, { firstTimeUser: false });
@@ -63,15 +65,16 @@ passport.use(
   },
   async (accessToken, refreshToken, profile, done) => {
     try {
-      const userFromMongo = getCollection("users", "microsoftUsers");
-      let user = await userFromMongo.findOne({ microsoftId: profile.id });
+      const database = await databasePromise;
+      const userCollection = await database.collection('users')
+      let user = await userCollection.findOne({ microsoftId: profile.id });
       if (!user) {
         user = {
           microsoftId: profile.id,
           displayName: profile.displayName,
           email: profile.emails[0].value
         };
-        await userFromMongo.insertOne(user);
+        await userCollection.insertOne(user);
         return done(null, user, { firstTimeUser: true });
       }
       return done(null, user, { firstTimeUser: false });
